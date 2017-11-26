@@ -22,25 +22,27 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-
 .word {
 	font-family: serif;
 	padding: 2px;
 	background-color: pink;
 	font-size: 20px;
-	display: flex;
 	float: left;
 	margin: 8px;
 	cursor: move;
-	position: relative;
 	opacity: 0.8;
+}
+
+.playground {
+  position:relative
 }
 
 h1 {
   font-style: italic;
+}
+
+.ButtonDiv {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
 }

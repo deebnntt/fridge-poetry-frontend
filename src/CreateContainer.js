@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react'
 import PoemPlayground from './PoemPlayground.js'
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
-import { fetchWords } from "./actions/words";
+import { fetchWords } from "./actions/words.js";
 
 class CreateContainer extends React.Component {
 
@@ -12,10 +12,10 @@ class CreateContainer extends React.Component {
 
   render() {
     return (
-      <div className="container-div">
-        <h1>fridge poetry</h1>
-        <PoemPlayground words={this.props.words}/>
-      </div>
+        <div className="container-div">
+          <h1>fridge poetry</h1>
+          <PoemPlayground className="playground" words={this.props.words}/>
+        </div>
     )
   }
 }
@@ -35,4 +35,5 @@ function mapDispatchToProps(dispatch) {
     }
   };
 }
-export default connect(mapStateToProps, mapDispatchToProps)(CreateContainer);
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateContainer)
