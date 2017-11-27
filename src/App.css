@@ -46,3 +46,11 @@ h1 {
   bottom: 15px;
   right: 15px;
 }
+
+.line {
+  /*position: fixed;
+  bottom: 200px;*/
+  position: fixed;
+  bottom: 100px;
+  border-top: 1px dashed #8c8b8b;
+}

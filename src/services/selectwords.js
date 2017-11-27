@@ -57,7 +57,12 @@ export default class SelectWords {
       []
     )
 
-    return flattened
+    let unique = flattened.reduce(function(p,c,i,a){
+      if (p.indexOf(c) === -1) p.push(c);
+      return p;
+    }, [])
+
+    return unique
   }
 
   static shuffleWords(array) {

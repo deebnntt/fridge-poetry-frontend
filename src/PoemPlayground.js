@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Draggable from 'react-draggable';
 import WordDiv from './WordDiv.js'
 import SaveButton from './SaveButton.js'
+import { connect } from 'react-redux';
+import { createPoem } from './actions/poems.js'
 
 class PoemPlayground extends React.Component {
 
@@ -14,11 +14,10 @@ class PoemPlayground extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      activeDrags: 0,
       deltaPosition: {
         x: null, y: null
       },
-			poem: [{}],
+			poem: [],
     }
   }
 
@@ -31,28 +30,35 @@ class PoemPlayground extends React.Component {
     });
   }
 
-  onStart = () => {
-    this.setState({
-      activeDrags: ++this.state.activeDrags
-      }
-    );
-  }
-
   onStop = (position, word) => {
-		let pos = position
+		let posx = position.x
+		let posy = position.y
 		let w = word
-		let poemWord = { word: w, position: {pos}}
+		let poemWord = { text: w, x: posx, y: posy }
+
+		let poemArray = this.state.poem
+		let filtered = poemArray.filter(word => word.text !== w)
+		let poems = filtered.concat(poemWord)
+
 		console.log(poemWord)
     this.setState({
 			activeDrags: --this.state.activeDrags,
-			poem: this.state.poem.concat(poemWord)
+			poem: poems
 		});
   }
 
-	handleSubmit = () => {
+	handleSubmit = (event) => {
+		event.preventDefault();
 		console.log(this.state.poem)
+		const array = this.state.poem
+		const data =
+			{
+			  "poem": {
+			  	"magnet": array
+			  }
+			}
+		this.props.createPoem(data)
 	}
-
 
   render() {
 
@@ -65,6 +71,7 @@ class PoemPlayground extends React.Component {
 		return(
 			<div>
 				{mappedWords}
+				<hr className="line"/>
 				<SaveButton handleSubmit={this.handleSubmit}/>
 			</div>
 		)
@@ -72,4 +79,12 @@ class PoemPlayground extends React.Component {
 
 }
 
-export default PoemPlayground
+function mapDispatchToProps(dispatch){
+  return{
+    createPoem: (params) => {
+      dispatch(createPoem(params))
+    }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(PoemPlayground)

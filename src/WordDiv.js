@@ -2,9 +2,6 @@ import React from 'react'
 import Draggable from 'react-draggable';
 
 class WordDiv extends React.Component {
-  constructor(props) {
-    super(props)
-    }
 
   handleClick = () => {
     const val = this.props.position

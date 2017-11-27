@@ -25,7 +25,22 @@
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
+    <script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
+    <script>
+    // Loading `lodash.fp.js` converts `_` to its fp variant.
+    _.defaults({ 'a': 2, 'b': 2 })({ 'a': 1 });
+    // ➜ { 'a': 1, 'b': 2 }
+
+    // Use `noConflict` to restore the pre-fp variant.
+    var fp = _.noConflict();
+
+    _.defaults({ 'a': 1 }, { 'a': 2, 'b': 2 });
+    // ➜ { 'a': 1, 'b': 2 }
+    fp.defaults({ 'a': 2, 'b': 2 })({ 'a': 1 });
+    // ➜ { 'a': 1, 'b': 2 }
+    </script>
+    <div id="root">
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
