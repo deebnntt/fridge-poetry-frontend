@@ -7,6 +7,6 @@ export default class PoemApi {
         Accept: "application/json"
       },
       body: JSON.stringify(params)
-    }).then(res => res.json());
+    })
   }
 }

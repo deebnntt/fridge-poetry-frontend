@@ -2,7 +2,8 @@ import React from 'react';
 import WordDiv from './WordDiv.js'
 import SaveButton from './SaveButton.js'
 import { connect } from 'react-redux';
-import { createPoem } from './actions/poems.js'
+import { createPoem } from '../actions/poems.js'
+import { Redirect } from 'react-router'
 
 class PoemPlayground extends React.Component {
 
@@ -18,6 +19,7 @@ class PoemPlayground extends React.Component {
         x: null, y: null
       },
 			poem: [],
+			submitted: false
     }
   }
 
@@ -42,7 +44,6 @@ class PoemPlayground extends React.Component {
 
 		console.log(poemWord)
     this.setState({
-			activeDrags: --this.state.activeDrags,
 			poem: poems
 		});
   }
@@ -58,11 +59,17 @@ class PoemPlayground extends React.Component {
 			  }
 			}
 		this.props.createPoem(data)
+
+		this.setState({
+			submitted: true
+		});
 	}
 
   render() {
 
 		const {deltaPosition} = this.state;
+		const id = this.props.currentPoem
+		const url = `poems/${id}`
 
 		const mappedWords = this.props.words.map((w, index) => {
 			return <WordDiv ref="child" word={w} value={w} key={index} onStart={this.onStart} onStop={this.onStop}  position={deltaPosition} handleDrag={this.handleDrag} />
@@ -71,12 +78,11 @@ class PoemPlayground extends React.Component {
 		return(
 			<div>
 				{mappedWords}
-				<hr className="line"/>
 				<SaveButton handleSubmit={this.handleSubmit}/>
+					{(this.state.submitted) ? <Redirect push to={url} id={id} /> : null}
 			</div>
 		)
   }
-
 }
 
 function mapDispatchToProps(dispatch){

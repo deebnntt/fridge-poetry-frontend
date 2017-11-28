@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PoemPlayground from './PoemPlayground.js'
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
-import { fetchWords } from "./actions/words.js";
+import { fetchWords } from "../actions/words.js";
 
 class CreateContainer extends React.Component {
 
@@ -14,7 +14,7 @@ class CreateContainer extends React.Component {
     return (
         <div className="container-div">
           <h1>fridge poetry</h1>
-          <PoemPlayground className="playground" words={this.props.words}/>
+          <PoemPlayground className="playground" words={this.props.words} currentPoem={this.props.currentPoem}/>
         </div>
     )
   }
@@ -23,6 +23,7 @@ class CreateContainer extends React.Component {
 function mapStateToProps(state) {
   console.log("state", state);
   return {
+    currentPoem: state.currentPoem,
     words: state.words,
     isLoading: state.isLoading
   };
