@@ -4,6 +4,7 @@ import SaveButton from './SaveButton.js'
 import { connect } from 'react-redux';
 import { createPoem, resetNewPoemCreated } from '../actions/poems.js'
 import { Redirect } from 'react-router'
+import Divider from "./Divider.js"
 
 class PoemPlayground extends React.Component {
 
@@ -33,7 +34,11 @@ class PoemPlayground extends React.Component {
     });
   }
 
+
   onStop = (position, word) => {
+		let line = document.getElementById("divider")
+		let bottom = line.getBoundingClientRect().bottom;
+
 		let posx = position.x
 		let posy = position.y
 		let w = word
@@ -41,17 +46,16 @@ class PoemPlayground extends React.Component {
 
 		let poemArray = this.state.poem
 		let filtered = poemArray.filter(word => word.text !== w)
-		let poems = filtered.concat(poemWord)
+		let poem = filtered.concat(poemWord)
+		let finalPoem = poem.filter(word => word.y > bottom)
 
-		console.log(poemWord)
     this.setState({
-			poem: poems
+			poem: finalPoem
 		});
   }
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(this.state.poem)
 		const array = this.state.poem
 		const data =
 			{
@@ -76,6 +80,9 @@ class PoemPlayground extends React.Component {
 		return(
 			<div>
 				{mappedWords}
+				<div id="divider">
+					<Divider />
+				</div>
 				<SaveButton handleSubmit={this.handleSubmit}/>
 					{(this.props.newPoemCreated) ? <Redirect push to={url} id={id} /> : null}
 			</div>

@@ -11,8 +11,7 @@ class ShowContainer extends React.Component {
 
   render() {
     return (
-        <div className="container-div">
-          <h1>fridge poetry</h1>
+        <div>
           <PoemShow poem={this.props.currentPoem}/>
         </div>
     )

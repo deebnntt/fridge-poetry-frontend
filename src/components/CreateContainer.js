@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PoemPlayground from './PoemPlayground.js'
-import { Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchWords } from "../actions/words.js";
 
@@ -13,7 +12,6 @@ class CreateContainer extends React.Component {
   render() {
     return (
         <div className="container-div">
-          <h1>fridge poetry</h1>
           <PoemPlayground className="playground" words={this.props.words} currentPoem={this.props.currentPoem}/>
         </div>
     )
@@ -21,7 +19,6 @@ class CreateContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log("state", state);
   return {
     currentPoem: state.poem.currentPoem,
     words: state.words.words,
