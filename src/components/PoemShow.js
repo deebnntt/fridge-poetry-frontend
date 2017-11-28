@@ -1,29 +1,42 @@
 import React from 'react';
 import MagnetDiv from './MagnetDiv.js'
 import { connect } from 'react-redux';
+import { fetchPoem } from "../actions/poems.js"
 
 class PoemShow extends React.Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-
-    }
-  }
-
   componentDidMount() {
-
+    let id = this.props.match.params.id
+    this.props.fetchPoem(id)
   }
+
+  mappedMagnets = () => this.props.poem.magnets.map((m, index) => {
+    return <MagnetDiv className="magnet" key={index} word={m.text} left={m.x} top={m.y}/>
+  })
 
   render() {
 
 		return(
 			<div>
-				{this.props.id}
+      {this.props.poem ? this.mappedMagnets() : null}
 			</div>
 		)
   }
 
 }
 
-export default PoemShow
+function mapStateToProps(state) {
+  return {
+    poem: state.poem.poem
+    }
+  }
+
+function mapDispatchToProps(dispatch) {
+  return {
+    fetchPoem: (id) => {
+      dispatch(fetchPoem(id));
+    }
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PoemShow)

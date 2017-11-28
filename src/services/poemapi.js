@@ -9,4 +9,19 @@ export default class PoemApi {
       body: JSON.stringify(params)
     })
   }
+
+
+  static fetchPoem(id) {
+    const poemId = id
+    return fetch(
+      `http://localhost:3000/api/v1/poems/${poemId}`)
+      .then(res => res.json())
+    }
+
+  static fetchPoems() {
+    return fetch(
+      'http://localhost:3000/api/v1/poems')
+      .then(res => res.json())
+    }
+
 }

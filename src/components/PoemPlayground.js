@@ -2,7 +2,7 @@ import React from 'react';
 import WordDiv from './WordDiv.js'
 import SaveButton from './SaveButton.js'
 import { connect } from 'react-redux';
-import { createPoem } from '../actions/poems.js'
+import { createPoem, resetNewPoemCreated } from '../actions/poems.js'
 import { Redirect } from 'react-router'
 
 class PoemPlayground extends React.Component {
@@ -15,7 +15,7 @@ class PoemPlayground extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      deltaPosition: {
+      position: {
         x: null, y: null
       },
 			poem: [],
@@ -24,10 +24,11 @@ class PoemPlayground extends React.Component {
   }
 
   handleDrag = (e) => {
+		console.log(e)
     this.setState({
-      deltaPosition: {
-        x: e.x,
-        y: e.y,
+      position: {
+        x: (e.x - e.offsetX),
+        y: (e.y - e.offsetY),
       },
     });
   }
@@ -59,38 +60,40 @@ class PoemPlayground extends React.Component {
 			  }
 			}
 		this.props.createPoem(data)
-
-		this.setState({
-			submitted: true
-		});
 	}
+
+	componentWillUnmount = () => {this.props.resetNewPoemCreated()}
 
   render() {
 
-		const {deltaPosition} = this.state;
+		const mappedWords = this.props.words.map((w, index) => {
+			return <WordDiv ref="child" word={w} value={w} key={index} onStart={this.onStart} onStop={this.onStop}  handleDrag={this.handleDrag} position={this.state.position} />
+		})
+
 		const id = this.props.currentPoem
 		const url = `poems/${id}`
-
-		const mappedWords = this.props.words.map((w, index) => {
-			return <WordDiv ref="child" word={w} value={w} key={index} onStart={this.onStart} onStop={this.onStop}  position={deltaPosition} handleDrag={this.handleDrag} />
-		})
 
 		return(
 			<div>
 				{mappedWords}
 				<SaveButton handleSubmit={this.handleSubmit}/>
-					{(this.state.submitted) ? <Redirect push to={url} id={id} /> : null}
+					{(this.props.newPoemCreated) ? <Redirect push to={url} id={id} /> : null}
 			</div>
 		)
   }
 }
 
-function mapDispatchToProps(dispatch){
-  return{
-    createPoem: (params) => {
-      dispatch(createPoem(params))
-    }
+const mapStateToProps = (state) => {
+  return {
+    newPoemCreated: state.poem.newPoemCreated
   }
 }
 
-export default connect(null, mapDispatchToProps)(PoemPlayground)
+function mapDispatchToProps(dispatch){
+  return ({
+    createPoem: (params) => dispatch(createPoem(params)),
+		resetNewPoemCreated: () => dispatch(resetNewPoemCreated()),
+  })
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PoemPlayground)

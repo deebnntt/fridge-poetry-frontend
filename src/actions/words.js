@@ -3,7 +3,6 @@ import SelectWords from "../services/selectwords.js"
 
 export function fetchWords() {
   return function(dispatch) {
-    dispatch(fetchingWords());
      WordApi.fetchWords()
      .then(json => {
        const x = SelectWords.selectWords(json)
@@ -12,13 +11,13 @@ export function fetchWords() {
   }
 }
 
-function fetchedWords(words) {
+export function fetchedWords(words) {
   return {
     type: "FETCHED_WORDS",
     payload: words
   };
 }
 
-function fetchingWords() {
+export function fetchingWords() {
   return { type: "FETCHING_WORDS" };
 }

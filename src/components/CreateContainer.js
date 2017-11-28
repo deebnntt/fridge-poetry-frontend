@@ -23,9 +23,9 @@ class CreateContainer extends React.Component {
 function mapStateToProps(state) {
   console.log("state", state);
   return {
-    currentPoem: state.currentPoem,
-    words: state.words,
-    isLoading: state.isLoading
+    currentPoem: state.poem.currentPoem,
+    words: state.words.words,
+    isLoading: state.words.isLoading
   };
 }
 

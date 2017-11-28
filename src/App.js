@@ -4,6 +4,7 @@ import CreateContainer from './components/CreateContainer.js'
 import PoemShow from './components/PoemShow.js'
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route } from "react-router-dom";
+import { createStore, applyMiddleware } from 'redux';
 
 class App extends Component {
   render() {

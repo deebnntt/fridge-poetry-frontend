@@ -33,6 +33,16 @@
 	opacity: 0.8;
 }
 
+.magnet {
+	font-family: serif;
+	padding: 2px;
+	background-color: pink;
+	font-size: 20px;
+	float: left;
+	margin: 8px;
+	opacity: 0.8;
+}
+
 .playground {
   position:relative
 }
