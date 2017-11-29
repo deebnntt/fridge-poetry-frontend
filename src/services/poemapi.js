@@ -24,4 +24,19 @@ export default class PoemApi {
       .then(res => res.json())
     }
 
+  static updatePoem(id, data) {
+    const poemId = id
+    console.log(id, data)
+    return fetch(
+      `http://localhost:3000/api/v1/poems/${poemId}`,{
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+      .then(res => res.json())
+    }
+
 }

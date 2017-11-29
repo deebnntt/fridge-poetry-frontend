@@ -3,16 +3,31 @@
 	margin-right: 20px
 }
 
-.word {
-	font-family: serif;
-	padding: 2px;
+.word-wrapper {
+	margin: 8px;
+	padding: 0;
 	background-color: pink;
 	font-size: 20px;
 	float: left;
-	margin: 8px;
-	cursor: move;
-	opacity: 0.8;
-  box-shadow: 2px 2px 1px #888888;
+	cursor: grab;
+}
+
+.word {
+	margin: 0;
+	padding: 2px;
+	width: inherit;
+	height: inherit;
+	font-family: serif;
+	background-color: pink;
+	font-size: 20px;
+	float: left;
+	cursor: grab;
+	box-shadow: 2px 2px 1px #888888;
+	transition: all .1s linear;
+}
+
+.word:hover {
+	transform: scale(1.075);
 }
 
 .magnet {
@@ -24,6 +39,7 @@
 	margin: 8px;
 	opacity: 0.8;
   box-shadow: 2px 2px 1px #888888;
+	cursor: default;
 }
 
 .card-magnet {
@@ -68,7 +84,8 @@ hr {
   margin-right: auto;
   margin-bottom: 30px;
   padding: 15px;
-  border: 0.5px solid black;
+	background-color: #ffe9ec;
+  border: 1px solid black;
   box-shadow: 5px 5px 4px #888888;
 }
 
@@ -90,8 +107,7 @@ hr {
 	border: 0.5px solid black;
 	box-shadow: 5px 5px 4px #888888;
 	padding: 10px;
-	cursor: move;
-	background-color: pink
+	background-color: #ffe9ec;
 }
 
 .tag-card {
@@ -100,6 +116,5 @@ hr {
 	border: 0.5px solid black;
 	box-shadow: 5px 5px 4px #888888;
 	padding: 10px;
-	cursor: move;
-	background-color: pink
+	background-color: #ffe9ec;
 }

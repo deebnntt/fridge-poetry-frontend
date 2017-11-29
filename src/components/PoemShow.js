@@ -12,8 +12,16 @@ class PoemShow extends React.Component {
     this.props.fetchPoem(id)
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.poem) {
+      if (this.props.poem.title !== nextProps.poem.title) {
+        this.props.fetchPoem(this.props.poem.id)
+      }
+    }
+  }
+
   mappedMagnets = () => this.props.poem.magnets.map((m, index) => {
-    const newY = (m.y - 200)
+    const newY = (m.y - 100)
     return <MagnetDiv key={index} word={m.text} left={m.x} top={newY}/>
   })
 
@@ -21,9 +29,9 @@ class PoemShow extends React.Component {
 
 		return(
 			<div style={{"postion": "absolute"}}>
-        {this.props.poem ? this.mappedMagnets() : null}
-        <TitleCard />
-        <TagCard />
+      {this.props.poem ? this.mappedMagnets() : null}
+        <TitleCard poemId={this.props.match.params.id}/>
+      <TagCard />
 			</div>
 		)
   }

@@ -5,7 +5,7 @@ class MagnetDiv extends React.Component {
   render() {
 
     return (
-      <div className='magnet' style={{"position": "absolute", "marginLeft": this.props.left, "marginTop": this.props.top}}>
+      <div className='magnet' style={{"position": "absolute", "left": this.props.left, "top": this.props.top}}>
         {this.props.word}
       </div>
     )

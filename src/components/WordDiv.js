@@ -23,8 +23,10 @@ class WordDiv extends React.Component {
 
     return (
       <Draggable onStart={this.props.onStart} onStop={this.handleStop} onDrag={this.props.handleDrag}>
-        <div className='word'>
-          {this.props.word}
+        <div className='word-wrapper'>
+            <div className='word'>
+              {this.props.word}
+            </div>
         </div>
       </Draggable>
     )

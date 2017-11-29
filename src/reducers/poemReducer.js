@@ -19,5 +19,10 @@ export default function poemReducer(
       return state
     case "FETCHING_POEMS":
       return { ...state, isLoading: true };
+    case "UPDATE_POEM":
+      const updatedPoemState = {...state, poem: action.payload}
+      return updatedPoemState
+    case "UPDATING_POEM":
+      return { ...state, isLoading: true };
   }
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Draggable from 'react-draggable';
 
 class TagCard extends React.Component {
@@ -9,9 +9,14 @@ class TagCard extends React.Component {
 
   render() {
     return (
-      <Draggable>
-        <div className="tag-card" style={{"marginLeft": 750}}>
-          <p>Tags (Enter Here)</p>
+      <Draggable handle=".handle">
+        <div>
+          <div style={{"position": "absolute", "left": 400}}>
+            <div className="handle">drag me</div>
+            <div className="title-card">
+            Tags
+            </div>
+          </div>
         </div>
       </Draggable>
     )

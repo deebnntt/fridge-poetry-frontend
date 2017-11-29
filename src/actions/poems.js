@@ -45,3 +45,13 @@ export function fetchingPoems() {
 export function resetNewPoemCreated() {
   return function(dispatch) {dispatch({type: "RESET_NEWPOEMCREATED"})}
 }
+
+export function updatePoem(id, data) {
+  return function(dispatch) {
+    PoemApi.updatePoem(id, data)
+      .then(json => {
+        dispatch({type: "UPDATE_POEM",
+        payload: json})
+      })
+  }
+}
