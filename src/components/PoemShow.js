@@ -2,6 +2,8 @@ import React from 'react';
 import MagnetDiv from './MagnetDiv.js'
 import { connect } from 'react-redux';
 import { fetchPoem } from "../actions/poems.js"
+import TitleCard from './TitleCard.js'
+import TagCard from './TagCard.js'
 
 class PoemShow extends React.Component {
 
@@ -11,7 +13,7 @@ class PoemShow extends React.Component {
   }
 
   mappedMagnets = () => this.props.poem.magnets.map((m, index) => {
-    const newY = (m.y - 300)
+    const newY = (m.y - 200)
     return <MagnetDiv key={index} word={m.text} left={m.x} top={newY}/>
   })
 
@@ -20,6 +22,8 @@ class PoemShow extends React.Component {
 		return(
 			<div style={{"postion": "absolute"}}>
         {this.props.poem ? this.mappedMagnets() : null}
+        <TitleCard />
+        <TagCard />
 			</div>
 		)
   }

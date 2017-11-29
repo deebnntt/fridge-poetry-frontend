@@ -83,3 +83,23 @@ hr {
   margin: 20px;
   width: 40%;
 }
+
+.title-card {
+	height: 100px;
+	width: 250px;
+	border: 0.5px solid black;
+	box-shadow: 5px 5px 4px #888888;
+	padding: 10px;
+	cursor: move;
+	background-color: pink
+}
+
+.tag-card {
+	height: 100px;
+	width: 250px;
+	border: 0.5px solid black;
+	box-shadow: 5px 5px 4px #888888;
+	padding: 10px;
+	cursor: move;
+	background-color: pink
+}

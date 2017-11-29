@@ -37,6 +37,7 @@ export default class SelectWords {
   		'had',
   		'have',
   		'give',
+      'from',
   		'it',
   		'of',
   		'in',
@@ -45,7 +46,12 @@ export default class SelectWords {
   		'as',
   		'like',
   		'with',
-  		'from'
+  		'from',
+      's',
+      's',
+      'ing',
+      'do',
+      "don't"
   	]
 
     selected.push(extras, (this.shuffleWords(nouns).slice(0,30)), (this.shuffleWords(verbs).slice(0,25)), (this.shuffleWords(adjectives).slice(0,15)), (this.shuffleWords(adverbs).slice(0,10)))
