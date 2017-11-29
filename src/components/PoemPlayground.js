@@ -25,7 +25,6 @@ class PoemPlayground extends React.Component {
   }
 
   handleDrag = (e) => {
-		console.log(e)
     this.setState({
       position: {
         x: (e.x - e.offsetX),
@@ -56,6 +55,7 @@ class PoemPlayground extends React.Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
+		console.log(this.state.poem)
 		const array = this.state.poem
 		const data =
 			{

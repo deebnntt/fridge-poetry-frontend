@@ -11,14 +11,15 @@ class PoemShow extends React.Component {
   }
 
   mappedMagnets = () => this.props.poem.magnets.map((m, index) => {
-    return <MagnetDiv key={index} word={m.text} left={m.x} top={m.y}/>
+    const newY = (m.y - 300)
+    return <MagnetDiv key={index} word={m.text} left={m.x} top={newY}/>
   })
 
   render() {
 
 		return(
 			<div style={{"postion": "absolute"}}>
-      {this.props.poem ? this.mappedMagnets() : null}
+        {this.props.poem ? this.mappedMagnets() : null}
 			</div>
 		)
   }

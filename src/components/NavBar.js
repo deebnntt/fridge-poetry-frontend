@@ -7,7 +7,7 @@ class NavBar extends Component {
 		return (
 			<div className="Nav">
 				<ul>
-        <h1>Fridge Poetry</h1>
+        <h1>fridge poetry</h1>
 					<li>
 						<Link to="/list">poems</Link>
 					</li>
