@@ -4,6 +4,7 @@ class Search extends React.Component {
 
   handleChange = (e) => {
     let searchTerm = e.target.value
+    console.log(searchTerm)
     this.props.handleChange(searchTerm)
   }
 

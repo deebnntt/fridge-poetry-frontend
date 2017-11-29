@@ -33,7 +33,6 @@ class PoemPlayground extends React.Component {
     });
   }
 
-
   onStop = (position, word) => {
 		let line = document.getElementById("divider")
 		let bottom = line.getBoundingClientRect().bottom;

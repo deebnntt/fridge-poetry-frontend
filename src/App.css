@@ -1,3 +1,8 @@
+.App {
+	margin-left: 20px;
+	margin-right: 20px
+}
+
 .word {
 	font-family: serif;
 	padding: 2px;

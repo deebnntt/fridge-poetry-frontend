@@ -8,17 +8,31 @@ class ListContainer extends React.Component {
 
   constructor(props) {
     super(props)
+      this.state = {
+        searchTerm: null
+      }
   }
 
   componentDidMount() {
 		this.props.fetchPoems()
 	}
 
-  handleChange = () => {
-
+  handleChange = (search) => {
+    this.setState({
+      searchTerm: search
+    })
+    console.log(this.state.searchTerm)
   }
 
-  mappedPoems = () => this.props.poems.poems.map((p, index) => {
+  filteredPoems = () => this.props.poems.poems.filter((p) => {
+    if (this.state.searchTerm) {
+      return p.magnets.map(t => t.text).includes(this.state.searchTerm)
+    } else {
+      return p
+    }
+  })
+
+  mappedPoems = () => this.filteredPoems().map((p, index) => {
     return <PoemCard className="poem-card" key={index} poemId={p.id} magnets={p.magnets}/>
   })
 
