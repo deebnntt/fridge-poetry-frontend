@@ -1,12 +1,9 @@
 import React from 'react'
 import CardMagnet from './CardMagnet.js'
 import { Link } from 'react-router-dom';
+import poemParser from '../services/poemParser.js'
 
 class PoemCard extends React.Component {
-
-  mappedMagnets = () => this.props.magnets.map((m, index) => {
-    return <CardMagnet className="magnet" key={index} word={m.text} left={m.x} top={m.y}/>
-  })
 
   title = () => {
     if (this.props.poemTitle == null) {
@@ -15,6 +12,24 @@ class PoemCard extends React.Component {
       return this.props.poemTitle
     }
   }
+
+  parsedPoems = () => {
+    const magnetArray = this.props.magnets
+    const bucketed = poemParser.digest(magnetArray)
+    const stringifiedPoem = poemParser.sortRows(bucketed)
+    return stringifiedPoem
+  }
+
+  displayMagnets = () => {
+    const string = this.parsedPoems()
+    const replaced = string.replace(/\n/, " ")
+    const array = replaced.split(" ")
+    return array
+    }
+
+  mappedMagnets = () => this.displayMagnets().map((m, index) => {
+      return <CardMagnet className="magnet" key={index} word={m}/>
+    })
 
   render() {
 

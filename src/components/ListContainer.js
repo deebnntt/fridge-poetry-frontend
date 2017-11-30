@@ -2,7 +2,7 @@ import React from 'react'
 import PoemCard from './PoemCard.js'
 import { connect } from "react-redux";
 import { fetchPoems } from "../actions/poems.js";
-import Search from './Search.js'
+import Search from './Search.js';
 
 class ListContainer extends React.Component {
 
