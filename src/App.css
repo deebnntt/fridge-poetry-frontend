@@ -1,7 +1,7 @@
 .App {
 	margin-left: 20px;
 	margin-right: 20px;
-	font-family: "Assistant";
+	font-family: sans-serif;
 }
 
 .word-wrapper {
@@ -86,7 +86,7 @@ hr {
   margin-right: auto;
   margin-bottom: 30px;
   padding: 5px;
-	background-color: #C2F3F2;
+	/*background-color: #C2F3F2;*/
   border: 1px solid black;
   box-shadow: 5px 5px 4px #888888;
 }
@@ -97,10 +97,16 @@ h3 {
 }
 
 .detail-link {
+	font-family: sans-serif;
+	font-style: italic;
   font-size: 25px;
   text-decoration: none;
-  color: black;
+	color: black;
 	font-weight: bolder;
+}
+
+.detail-link:hover {
+  color: #C2F3F2;
 }
 
 .search {

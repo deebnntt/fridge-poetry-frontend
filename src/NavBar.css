@@ -23,6 +23,8 @@ div.Nav li a {
   padding: 10px;
   font-size: 25px;
   text-decoration: none;
+  font-weight: bold;
+  font-style: italic;
   color: black
 }
 
