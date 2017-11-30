@@ -21,7 +21,7 @@ div.Nav li {
 div.Nav li a {
   display: block;
   padding: 10px;
-  font-size: 20px;
+  font-size: 25px;
   text-decoration: none;
   color: black
 }
@@ -31,6 +31,14 @@ div.Nav li a:hover {
   color: pink
 }
 
-.active {
-  color: blue;
+.logo {
+  text-decoration: none;
+  color: black;
+  transition: all .25s linear;
+}
+
+.logo:hover {
+  text-decoration: none;
+  color: #C2F3F2;
+  transform: scale(4);
 }

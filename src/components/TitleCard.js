@@ -3,6 +3,7 @@ import Draggable from 'react-draggable';
 import TitleForm from './TitleForm.js'
 import { connect } from 'react-redux';
 import { updatePoem } from '../actions/poems.js'
+import dragicon from '../drag-icon.png'
 
 class TitleCard extends React.Component {
 
@@ -35,7 +36,7 @@ class TitleCard extends React.Component {
     return (
       <Draggable handle=".handle">
         <div>
-            <div className="handle">drag me</div>
+            <div className="handle"><img src={dragicon} className="drag-icon"/></div>
               <div className="title-card">
                 <h3>{ this.props.poem ? this.props.poem.title : this.state.title }</h3>
                 <TitleForm handleSubmit={this.handleSubmit}/>

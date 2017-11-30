@@ -22,13 +22,8 @@ class PoemCard extends React.Component {
 
     return (
       <div className="poem-card">
-      <h3>{this.title()}</h3>
-        <table>
-          <tbody>
-          <tr><td>{this.mappedMagnets()}</td></tr>
-          <tr><td><Link className="detail-link" to={url}>see details</Link></td></tr>
-          </tbody>
-        </table>
+        <h3><Link className="detail-link" to={url}>{this.title()}</Link></h3>
+        <div>{this.mappedMagnets()}</div><br/>
       </div>
     )
   }

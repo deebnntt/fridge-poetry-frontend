@@ -1,5 +1,6 @@
 import React from 'react'
 import Draggable from 'react-draggable';
+import dragicon from '../drag-icon.png'
 
 class TagCard extends React.Component {
 
@@ -12,7 +13,7 @@ class TagCard extends React.Component {
       <Draggable handle=".handle">
         <div>
           <div style={{"position": "absolute", "left": 400}}>
-            <div className="handle">drag me</div>
+            <div className="handle"><img src={dragicon} className="drag-icon"/></div>
             <div className="title-card">
             Tags
             </div>
