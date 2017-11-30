@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="16px" height="16px" viewBox="0 0 16 16" id="svg3913" version="1.1" inkscape:version="0.91 r13725" sodipodi:docname="88.svg">
+  <defs id="defs3915">
+    <pattern y="0" x="0" height="6" width="6" patternUnits="userSpaceOnUse" id="EMFhbasepattern"/>
+    <pattern y="0" x="0" height="6" width="6" patternUnits="userSpaceOnUse" id="EMFhbasepattern-5"/>
+    <pattern y="0" x="0" height="6" width="6" patternUnits="userSpaceOnUse" id="EMFhbasepattern-9"/>
+  </defs>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="11.313709" inkscape:cx="-0.11135529" inkscape:cy="7.8834559" inkscape:document-units="px" inkscape:current-layer="g4568" showgrid="true" units="px" inkscape:snap-bbox="true" inkscape:bbox-paths="true" inkscape:bbox-nodes="true" inkscape:snap-bbox-edge-midpoints="true" inkscape:snap-bbox-midpoints="true" inkscape:window-width="1366" inkscape:window-height="705" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1">
+    <inkscape:grid type="xygrid" id="grid3921"/>
+  </sodipodi:namedview>
+  
+  <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(0,-1036.3622)">
+    <g transform="matrix(1.0664186,0,0,1.0664186,58.689952,71.970494)" id="g5350">
+      <g id="g5479-1" transform="translate(-56.000005,-133)">
+        <g id="g4568" transform="matrix(0.93771808,0,0,0.93771808,2.8408121,65.511965)">
+          <path style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" d="M 1.5058594 1 A 0.50004997 0.50004997 0 0 0 1 1.5 L 1 8 C 1 11.8694 4.1306486 15 8 15 C 11.869352 15 15 11.8694 15 8 L 15 1.5 A 0.50004997 0.50004997 0 0 0 14.494141 1 L 11.494141 1.0332031 A 0.50004997 0.50004997 0 0 0 11 1.5351562 L 11 8.0117188 C 10.999994 9.6754188 9.6715446 11 8 11 C 6.3284565 11 4.999994 9.6754188 5 8.0117188 L 5 1.5351562 A 0.50004997 0.50004997 0 0 0 4.5058594 1.0351562 L 1.5058594 1 z M 2 2.0058594 L 4 2.0273438 L 4 3 L 2 3 L 2 2.0058594 z M 14 2.0058594 L 14 3 L 12 3 L 12 2.0273438 L 14 2.0058594 z M 2 4 L 4 4 L 4 8.0097656 C 3.999992 10.211966 5.7934815 11.998047 8 11.998047 C 10.206519 11.998047 11.999992 10.211866 12 8.0097656 L 12 4 L 14 4 L 14 8 C 14 11.3327 11.33265 14 8 14 C 4.6673514 14 2 11.3327 2 8 L 2 4 z " transform="translate(-1.9999999,1036.3622)" id="path6413"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+	
+	
+	<metadata>
+		<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+			<rdf:Description about="https://iconscout.com/legal#licenses" dc:title="Education, Magnet, Attract, Distract, Attach, Iron" dc:description="Education, Magnet, Attract, Distract, Attach, Iron" dc:publisher="Iconscout" dc:date="2016-12-14" dc:format="image/svg+xml" dc:language="en">
+				<dc:creator>
+					<rdf:Bag>
+						<rdf:li>Chamestudio</rdf:li>
+					</rdf:Bag>
+				</dc:creator>
+			</rdf:Description>
+		</rdf:RDF>
+    </metadata></svg>

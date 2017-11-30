@@ -26,7 +26,7 @@ class ListContainer extends React.Component {
 
   filteredPoems = () => this.props.poems.poems.filter((p) => {
     if (this.state.searchTerm) {
-      return p.magnets.map(t => t.text).includes(this.state.searchTerm)
+      return p.magnets.map(t => t.text.toLowerCase()).includes(this.state.searchTerm.toLowerCase()) || p.title !== null && p.title.toLowerCase().includes(this.state.searchTerm.toLowerCase())
     } else {
       return p
     }

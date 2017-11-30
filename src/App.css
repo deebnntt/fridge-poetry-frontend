@@ -4,6 +4,10 @@
 	font-family: sans-serif;
 }
 
+.app-body {
+	margin-top: 85px
+}
+
 .word-wrapper {
 	margin: 8px;
 	padding: 0;
@@ -55,7 +59,7 @@
 }
 
 .playground {
-  position:relative
+  position: absolute;
 }
 
 h1 {
@@ -126,9 +130,28 @@ h3 {
   color: #C2F3F2;
 }
 
+.search-div {
+  margin: auto;
+  width: 50%;
+	padding-top: 40px;
+	padding-bottom: 50px
+}
+
 .search {
-  margin: 20px;
-  width: 40%;
+  margin: auto;
+  width: 95%;
+	height: 30px;
+	background-color: #C2F3F2;
+	font-size: 25px;
+	font-style: italic;
+	box-sizing: border-box;
+	border: 1px solid #555;
+	padding: 2px;
+	outline: none;
+}
+
+.search:focus {
+  background-color: pink;
 }
 
 .title-card {
@@ -158,4 +181,8 @@ h3 {
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	height: 18px;
+}
+
+.search-icon {
+	padding-left: 4px
 }

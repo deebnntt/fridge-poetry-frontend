@@ -13,9 +13,11 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar />
-          <Route exact path='/list' component={ListContainer}/>
-          <Route exact path='/' component={CreateContainer}/>
-          <Route exact path='/poems/:id' component={PoemShow}/>
+          <div className="app-body">
+            <Route exact path='/list' component={ListContainer}/>
+            <Route exact path='/' component={CreateContainer}/>
+            <Route exact path='/poems/:id' component={PoemShow}/>
+          </div>
         </div>
       </Router>
     );
