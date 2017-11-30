@@ -6,7 +6,7 @@ class SaveButton extends React.Component {
 
     return (
       <div className="ButtonDiv">
-        <button type="button" onClick={this.props.handleSubmit}>save poem</button>
+        <button type="button" className="button" onClick={this.props.handleSubmit}>save poem</button>
       </div>
     )
   }

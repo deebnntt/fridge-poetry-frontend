@@ -7,7 +7,7 @@ class NavBar extends Component {
 		return (
 			<div className="Nav">
 				<ul>
-        <h1><Link className="logo" to="/">FRIDGE POETRY</Link></h1>
+        <h1><Link className="logo" to="/">mag.NET</Link></h1>
 					<li>
 						<Link to="/list">POEMS</Link>
 					</li>
