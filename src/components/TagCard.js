@@ -12,10 +12,10 @@ class TagCard extends React.Component {
     return (
       <Draggable handle=".handle">
         <div>
-          <div style={{"position": "absolute", "left": 400}}>
+          <div style={{"position": "absolute", "top":-20, "left": 650}}>
             <div className="handle"><img src={dragicon} className="drag-icon"/></div>
-            <div className="title-card">
-            Tags
+            <div className="tag-card">
+              <h3>TAGS</h3>
             </div>
           </div>
         </div>

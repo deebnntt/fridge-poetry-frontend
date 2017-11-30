@@ -115,6 +115,7 @@ hr {
 h3 {
 	margin-top: 2px;
 	margin-bottom: 7px;
+	font-style: italic;
 }
 
 .detail-link {
@@ -156,7 +157,7 @@ h3 {
 
 .title-card {
 	height: 100px;
-	width: 250px;
+	width: 300px;
 	border: 0.5px solid black;
 	box-shadow: 5px 5px 4px #888888;
 	padding: 10px;
@@ -164,8 +165,8 @@ h3 {
 }
 
 .tag-card {
-	height: 100px;
-	width: 250px;
+	height: 175px;
+	width: 300px;
 	border: 0.5px solid black;
 	box-shadow: 5px 5px 4px #888888;
 	padding: 10px;
