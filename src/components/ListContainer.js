@@ -33,7 +33,7 @@ class ListContainer extends React.Component {
   })
 
   mappedPoems = () => this.filteredPoems().map((p, index) => {
-    return <PoemCard className="poem-card" key={index} poemId={p.id} magnets={p.magnets}/>
+    return <PoemCard className="poem-card" key={index} poemTitle={p.title} poemId={p.id} magnets={p.magnets}/>
   })
 
   render() {

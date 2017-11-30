@@ -17,6 +17,8 @@ class TitleCard extends React.Component {
 
 	}
 
+
+
   handleSubmit = (input) => {
     const id = this.props.poemId
     this.setState({
@@ -29,15 +31,13 @@ class TitleCard extends React.Component {
     this.props.updatePoem(id, data)
   }
 
-  
-
   render() {
     return (
       <Draggable handle=".handle">
         <div>
             <div className="handle">drag me</div>
               <div className="title-card">
-                <h3>{ this.state.title ? this.state.title : "Untitled"}</h3>
+                <h3>{ this.props.poem ? this.props.poem.title : this.state.title }</h3>
                 <TitleForm handleSubmit={this.handleSubmit}/>
               </div>
           </div>
@@ -46,10 +46,16 @@ class TitleCard extends React.Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    poem: state.poem.poem
+    }
+  }
+
 function mapDispatchToProps(dispatch){
   return ({
     updatePoem: (id, data) => dispatch(updatePoem(id, data))
   })
 }
 
-export default connect(null, mapDispatchToProps)(TitleCard)
+export default connect(mapStateToProps, mapDispatchToProps)(TitleCard)

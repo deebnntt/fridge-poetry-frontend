@@ -24,5 +24,7 @@ export default function poemReducer(
       return updatedPoemState
     case "UPDATING_POEM":
       return { ...state, isLoading: true };
+    case "POEM_UPDATED":
+      return {...state, poem: null}
   }
 }

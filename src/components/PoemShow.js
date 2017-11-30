@@ -1,7 +1,7 @@
 import React from 'react';
 import MagnetDiv from './MagnetDiv.js'
 import { connect } from 'react-redux';
-import { fetchPoem } from "../actions/poems.js"
+import { fetchPoem, updatedPoem } from "../actions/poems.js"
 import TitleCard from './TitleCard.js'
 import TagCard from './TagCard.js'
 
@@ -15,10 +15,14 @@ class PoemShow extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.poem) {
       if (this.props.poem.title !== nextProps.poem.title) {
-        this.props.fetchPoem(this.props.poem.id)
+        this.props.fetchPoem(this.props.match.params.id)
       }
     }
-  }
+   }
+
+   componentWillUnmount() {
+     this.props.updatedPoem()
+   }
 
   mappedMagnets = () => this.props.poem.magnets.map((m, index) => {
     const newY = (m.y - 100)
@@ -48,6 +52,9 @@ function mapDispatchToProps(dispatch) {
   return {
     fetchPoem: (id) => {
       dispatch(fetchPoem(id));
+    },
+    updatedPoem: () => {
+      dispatch(updatedPoem())
     }
   };
 }

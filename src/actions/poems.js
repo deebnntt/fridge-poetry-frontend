@@ -55,3 +55,9 @@ export function updatePoem(id, data) {
       })
   }
 }
+
+export function updatedPoem() {
+  return function(dispatch) {
+    type: "POEM_UPDATED"
+  }
+}

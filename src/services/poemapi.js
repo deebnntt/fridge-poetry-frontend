@@ -26,7 +26,6 @@ export default class PoemApi {
 
   static updatePoem(id, data) {
     const poemId = id
-    console.log(id, data)
     return fetch(
       `http://localhost:3000/api/v1/poems/${poemId}`,{
         method: "PATCH",
