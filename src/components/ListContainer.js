@@ -3,6 +3,7 @@ import PoemCard from './PoemCard.js'
 import { connect } from "react-redux";
 import { fetchPoems } from "../actions/poems.js";
 import Search from './Search.js';
+import poemParser from '../services/poemParser.js'
 
 class ListContainer extends React.Component {
 
@@ -25,8 +26,12 @@ class ListContainer extends React.Component {
   }
 
   filteredPoems = () => this.props.poems.poems.filter((p) => {
+    const magnetArray = p.magnets
+    const bucketed = poemParser.digest(magnetArray)
+    const stringifiedPoem = poemParser.sortRows(bucketed)
+
     if (this.state.searchTerm) {
-      return p.magnets.map(t => t.text.toLowerCase()).includes(this.state.searchTerm.toLowerCase()) || p.title !== null && p.title.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+        return stringifiedPoem.toLowerCase().includes(this.state.searchTerm.toLowerCase()) || p.title !== null && p.title.toLowerCase().includes(this.state.searchTerm.toLowerCase())
     } else {
       return p
     }

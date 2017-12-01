@@ -18,8 +18,6 @@ class TitleCard extends React.Component {
 
 	}
 
-
-
   handleSubmit = (input) => {
     const id = this.props.poemId
     this.setState({
@@ -36,7 +34,7 @@ class TitleCard extends React.Component {
     return (
       <Draggable handle=".handle">
         <div style={{"position": "absolute", "top":150, "left": 100}}>
-            <div className="handle"><img src={dragicon} className="drag-icon"/></div>
+            <div className="handle"><h3>TITLE</h3></div>
               <div className="title-card">
                 <h3>{ this.props.poem ? this.props.poem.title : this.state.title }</h3>
                 <TitleForm handleSubmit={this.handleSubmit}/>

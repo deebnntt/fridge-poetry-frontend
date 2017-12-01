@@ -2,7 +2,7 @@ import React from 'react'
 import Draggable from 'react-draggable';
 import dragicon from '../drag-icon.png'
 
-class TagCard extends React.Component {
+class ShareCard extends React.Component {
 
   componentDidMount() {
 
@@ -13,9 +13,10 @@ class TagCard extends React.Component {
       <Draggable handle=".handle">
         <div>
           <div style={{"position": "absolute", "top":-20, "left": 650}}>
-            <div className="handle"><img src={dragicon} className="drag-icon"/></div>
-            <div className="tag-card">
-              <h3>TAGS</h3>
+            <div className="handle"><h3>SHARE</h3></div>
+              <div className="tag-card">
+              <h3>text version:</h3>
+              <p>{this.props.text}</p>
             </div>
           </div>
         </div>
@@ -24,4 +25,4 @@ class TagCard extends React.Component {
   }
 }
 
-export default TagCard
+export default ShareCard

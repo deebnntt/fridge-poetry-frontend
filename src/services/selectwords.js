@@ -6,6 +6,8 @@ export default class SelectWords {
     const verbs = json.filter(w => w.part_of_speech === 'verb')
     const adjectives = json.filter(w => w.part_of_speech === 'adjective')
     const adverbs = json.filter(w => w.part_of_speech === 'adverb')
+    const prepositions = json.filter(w => w.part_of_speech === 'preposition')
+    const pronouns = json.filter(w => w.part_of_speech === 'pronoun')
     const extras = [
       ',',
       ',',
@@ -54,7 +56,7 @@ export default class SelectWords {
       "don't"
   	]
 
-    selected.push(extras, (this.shuffleWords(nouns).slice(0,30)), (this.shuffleWords(verbs).slice(0,25)), (this.shuffleWords(adjectives).slice(0,15)), (this.shuffleWords(adverbs).slice(0,10)))
+    selected.push(extras, (this.shuffleWords(prepositions).slice(0,5)), (this.shuffleWords(pronouns).slice(0,10)), (this.shuffleWords(nouns).slice(0,25)), (this.shuffleWords(verbs).slice(0,25)), (this.shuffleWords(adjectives).slice(0,20)), (this.shuffleWords(adverbs).slice(0,10)))
 
     let flattened = selected.reduce(
       function(a, b) {

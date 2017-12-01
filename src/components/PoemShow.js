@@ -3,7 +3,9 @@ import MagnetDiv from './MagnetDiv.js'
 import { connect } from 'react-redux';
 import { fetchPoem, updatedPoem } from "../actions/poems.js"
 import TitleCard from './TitleCard.js'
-import TagCard from './TagCard.js'
+import ShareCard from './ShareCard.js'
+import poemParser from '../services/poemParser.js'
+
 
 class PoemShow extends React.Component {
 
@@ -20,9 +22,16 @@ class PoemShow extends React.Component {
     }
    }
 
-   componentWillUnmount() {
-     this.props.updatedPoem()
-   }
+  componentWillUnmount() {
+   this.props.updatedPoem()
+  }
+
+  parsedPoems = () => {
+   const magnetArray = this.props.poem.magnets
+   const bucketed = poemParser.digest(magnetArray)
+   const stringifiedPoem = poemParser.sortRows(bucketed)
+   return stringifiedPoem
+  }
 
   mappedMagnets = () => this.props.poem.magnets.map((m, index) => {
     const newY = (m.y - 100)
@@ -35,7 +44,7 @@ class PoemShow extends React.Component {
 			<div style={{"postion": "absolute"}}>
       {this.props.poem ? this.mappedMagnets() : null}
         <TitleCard poemId={this.props.match.params.id}/>
-      <TagCard />
+        <ShareCard text={this.props.poem ? this.parsedPoems() : null} />
 			</div>
 		)
   }
