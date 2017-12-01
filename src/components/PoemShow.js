@@ -34,8 +34,7 @@ class PoemShow extends React.Component {
   }
 
   mappedMagnets = () => this.props.poem.magnets.map((m, index) => {
-    const newY = (m.y - 100)
-    return <MagnetDiv key={index} word={m.text} left={m.x} top={newY}/>
+    return <MagnetDiv key={index} word={m.text} left={m.x} top={m.y}/>
   })
 
   render() {

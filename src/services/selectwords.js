@@ -49,8 +49,11 @@ export default class SelectWords {
   		'like',
   		'with',
   		'from',
+      'their',
+      'his',
+      'her',
       's',
-      's',
+      'd',
       'ing',
       'do',
       "don't"
@@ -74,8 +77,19 @@ export default class SelectWords {
   }
 
   static shuffleWords(array) {
-    let random = array.sort(function(){return Math.round(Math.random());});
-    return random.map(word => word.word)
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    while (0 !== currentIndex) {
+
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array.map(word => word.word);
   }
 
 }

@@ -42,7 +42,6 @@
 	font-size: 20px;
 	float: left;
 	margin: 8px;
-	opacity: 0.8;
   box-shadow: 2px 2px 1px #888888;
 	cursor: default;
 }
@@ -156,7 +155,7 @@ h3 {
 }
 
 .title-card {
-	height: 100px;
+	height: auto;
 	width: 300px;
 	border: 0.5px solid black;
 	box-shadow: 5px 5px 4px #888888;
@@ -164,9 +163,27 @@ h3 {
 	background-color: #C2F3F2;
 }
 
-.tag-card {
-	height: 175px;
-	width: 300px;
+.input-text {
+	margin: auto;
+	width: 95%;
+	height: 25px;
+	background-color: white;
+	font-size: 17px;
+	font-style: italic;
+	box-sizing: border-box;
+	border: 1px solid #555;
+	padding: 6px;
+	outline: none;
+	resize: none;
+}
+
+.input-text:focus {
+  background-color: pink;
+}
+
+.share-card {
+	height: auto;
+	width: 325px;
 	border: 0.5px solid black;
 	box-shadow: 5px 5px 4px #888888;
 	padding: 10px;
@@ -186,4 +203,45 @@ h3 {
 
 .search-icon {
 	padding-left: 4px
+}
+
+.share-box {
+	margin: auto;
+	width: 95%;
+	height: 150px;
+	background-color: white;
+	font-size: 17px;
+	font-family: serif;
+	box-sizing: border-box;
+	border: 1px solid #555;
+	padding: 6px;
+	outline: none;
+	resize: none;
+}
+
+.share-box:focus {
+  background-color: pink;
+}
+
+.button-small {
+	border: 0.5px solid black;
+	box-shadow: 5px 5px 4px #888888;
+	background-color: pink;
+	padding: 5px;
+	margin-top: 5px;
+	font-size: 15px;
+	font-style: italic;
+	box-shadow: 4px 4px 2px #888888;
+	border-radius: 0px;
+	transition: all .1s linear;
+}
+
+.button-small:hover {
+	transform: scale(1.025);
+}
+
+.twitter-share-button {
+	float: right;
+	margin-right: 5px;
+	margin-top: 3px
 }
