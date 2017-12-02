@@ -18,6 +18,7 @@ export default class SelectWords {
   		'.',
   		'?',
   		'!',
+      'the',
   		'we',
   		'a',
   		'an',

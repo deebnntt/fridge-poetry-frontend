@@ -33,12 +33,12 @@ class ShareCard extends React.Component {
     return (
       <Draggable handle=".handle">
         <div>
-          <div style={{"position": "absolute", "top":-20, "left": 650}}>
+          <div style={{"position": "absolute", "top":-20, "left": 450}}>
             <div className="handle"><h3>SHARE</h3></div>
               <div className="share-card">
               <p className="twitter-share-button"><a href={url} target="_blank"><img src={twittericon} /></a></p>
               <div>{this.props.text ? this.displayPoem() : null}</div><br />
-              <div><textarea className="share-box" id="input" value={this.props.text}></textarea></div>
+              <div><textarea className="share-box" id="input" value={this.props.text ? this.props.text : null}></textarea></div>
               <button className="button-small" onClick={this.handleCopy}>copy poem</button>
               <br />
             </div>

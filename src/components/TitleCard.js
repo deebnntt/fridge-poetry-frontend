@@ -33,7 +33,7 @@ class TitleCard extends React.Component {
   render() {
     return (
       <Draggable handle=".handle">
-        <div style={{"position": "absolute", "top":150, "left": 100}}>
+        <div style={{"position": "absolute", "top":150, "left": 50}}>
             <div className="handle"><h3>TITLE</h3></div>
               <div className="title-card">
                 <h3>{ this.props.poem ? this.props.poem.title : this.state.title }</h3><br />

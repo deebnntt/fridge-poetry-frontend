@@ -245,3 +245,12 @@ h3 {
 	margin-right: 5px;
 	margin-top: 3px
 }
+
+.color-card {
+	height: auto;
+	width: 240px;
+	border: 0.5px solid black;
+	box-shadow: 5px 5px 4px #888888;
+	padding: 10px;
+	background-color: #C2F3F2;
+}
