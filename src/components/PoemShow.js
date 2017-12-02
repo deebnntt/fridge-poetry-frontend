@@ -10,19 +10,9 @@ import poemParser from '../services/poemParser.js'
 
 class PoemShow extends React.Component {
 
-  constructor(props) {
-    super(props)
-      this.state = {
-        background: "#FFB6C1"
-      }
-  }
-
   componentDidMount() {
     let id = this.props.match.params.id
     this.props.fetchPoem(id)
-    // this.setState({
-    //   background: this.props.poem.color
-    // })
   }
 
   componentWillReceiveProps(nextProps) {
@@ -30,17 +20,16 @@ class PoemShow extends React.Component {
       if (this.props.poem.title !== nextProps.poem.title) {
         this.props.fetchPoem(this.props.match.params.id)
       }
+      if (this.props.poem.color !== nextProps.poem.color) {
+        this.setState({
+          background: nextProps.poem.color
+        })
+      }
     }
-   }
+  }
 
   componentWillUnmount() {
    this.props.updatedPoem()
-  }
-
-  handleChangeComplete = (background) => {
-    this.setState({
-      background: background
-    })
   }
 
   parsedPoems = () => {
@@ -51,8 +40,7 @@ class PoemShow extends React.Component {
   }
 
   mappedMagnets = () => this.props.poem.magnets.map((m, index) => {
-    const backgroundColor = this.state.background
-    return <MagnetDiv key={index} word={m.text} left={m.x} top={m.y} background={backgroundColor}/>
+    return <MagnetDiv key={index} word={m.text} left={m.x} top={m.y} background={this.props.poem.color}/>
   })
 
   render() {
@@ -62,7 +50,7 @@ class PoemShow extends React.Component {
         {this.props.poem ? this.mappedMagnets() : null}
         <TitleCard poemId={this.props.match.params.id}/>
         <ShareCard text={this.props.poem ? this.parsedPoems() : null} />
-        <ColorCard handleChangeComplete={this.handleChangeComplete}/>
+        <ColorCard poemId={this.props.match.params.id} handleChangeComplete={this.handleChangeComplete}/>
 			</div>
 		)
   }

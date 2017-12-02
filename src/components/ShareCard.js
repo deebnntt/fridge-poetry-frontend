@@ -1,6 +1,5 @@
 import React from 'react'
 import Draggable from 'react-draggable';
-import dragicon from '../drag-icon.png'
 import twittericon from '../twitter.svg'
 
 class ShareCard extends React.Component {
@@ -9,9 +8,9 @@ class ShareCard extends React.Component {
 
 	}
 
-  displayPoem = () => this.props.text.split('\n').map(function(item) {
+  displayPoem = () => this.props.text.split('\n').map(function(item, index) {
     return  (
-      <span>
+      <span key={index}>
         {item}
         <br/>
       </span>
@@ -36,9 +35,9 @@ class ShareCard extends React.Component {
           <div style={{"position": "absolute", "top":-20, "left": 450}}>
             <div className="handle"><h3>SHARE</h3></div>
               <div className="share-card">
-              <p className="twitter-share-button"><a href={url} target="_blank"><img src={twittericon} /></a></p>
+              <p className="twitter-share-button"><a href={url} target="_blank"><img src={twittericon} alt=""/></a></p>
               <div>{this.props.text ? this.displayPoem() : null}</div><br />
-              <div><textarea className="share-box" id="input" value={this.props.text ? this.props.text : null}></textarea></div>
+              <div><textarea className="share-box" id="input" value={this.props.text ? this.props.text : ""}></textarea></div>
               <button className="button-small" onClick={this.handleCopy}>copy poem</button>
               <br />
             </div>

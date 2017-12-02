@@ -7,12 +7,20 @@ import { CirclePicker } from 'react-color';
 class ColorCard extends React.Component {
 
   handleChangeComplete = (color, event) => {
-    this.props.handleChangeComplete(color.hex)
+    let id = this.props.poemId
+    const data =
+      {
+        "color": color.hex
+      }
+    this.props.updatePoem(id, data)
   }
 
   render() {
 
-  const colors = ["#FFB6C1", "#e91e63", "#9c27b0", "#673ab7", "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4", "#009688", "#4caf50", "#8bc34a", "#cddc39", "#ffeb3b", "#ffc107", "#ff9800", "#ff5722", "#795548", "#607d8b"]
+  const colors = [
+    "#FFB6C1", "#dda0dd", "#f5f5f5", 	"#aeeeee", "#c6e2ff", "#87cefa", "#ffe4e1", "#bc8f8f", "#ffffe0", "#ffeb3b", "#999999", "#b0b0b0",
+    "#8470ff", "#ff5722", "#ff00ff", "#ffeb3b", "#76ee00", "#cddc39",
+  ]
 
     return (
       <Draggable handle=".handle">

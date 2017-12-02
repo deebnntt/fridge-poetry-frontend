@@ -5,7 +5,7 @@ class CardMagnet extends React.Component {
   render() {
 
     return (
-      <div className="card-magnet" style={{"position": "block"}}>
+      <div className="card-magnet" style={{"position": "block", "backgroundColor": this.props.color}}>
         {this.props.word}
       </div>
     )

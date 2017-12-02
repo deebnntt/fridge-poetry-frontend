@@ -9,12 +9,12 @@ class NavBar extends Component {
 		return (
 			<div className="Nav">
 				<ul>
-        <h1><Link className="logo" to="/">mag.NET</Link><img src={touchscreen} className="touch-icon"/></h1>
+        <h1><Link className="logo" to="/">mag.NET</Link><img src={touchscreen} className="touch-icon" alt=""/></h1>
 					<li>
 						<Link to="/list">POEMS</Link>
 					</li>
 					<li>
-						<img src={magnet} className="magnet-icon"/>
+						<img src={magnet} className="magnet-icon" alt=""/>
 					</li>
 				</ul>
 			</div>

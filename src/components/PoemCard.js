@@ -28,7 +28,7 @@ class PoemCard extends React.Component {
     }
 
   mappedMagnets = () => this.displayMagnets().map((m, index) => {
-      return <CardMagnet className="magnet" key={index} word={m}/>
+      return <CardMagnet className="magnet" key={index} word={m} color={this.props.color}/>
     })
 
   render() {

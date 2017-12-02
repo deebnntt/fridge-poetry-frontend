@@ -13,7 +13,7 @@ class Search extends React.Component {
 
     return (
       <div className="search-div">
-        <input type="text" className="search" onChange={this.handleChange} /><img src={searchIcon} className="search-icon"/>
+        <input type="text" className="search" onChange={this.handleChange} /><img src={searchIcon} className="search-icon" alt=""/>
       </div>
     )
   }
