@@ -1,7 +1,7 @@
 import React from 'react';
 import MagnetDiv from './MagnetDiv.js'
 import { connect } from 'react-redux';
-import { fetchPoem, updatedPoem, deletePoem, resetPoemDeleted } from "../actions/poems.js"
+import { fetchPoem, deletePoem, resetPoemDeleted } from "../actions/poems.js"
 import TitleCard from './TitleCard.js'
 import ShareCard from './ShareCard.js'
 import ColorCard from './ColorCard.js'
@@ -77,9 +77,6 @@ function mapDispatchToProps(dispatch) {
   return {
     fetchPoem: (id) => {
       dispatch(fetchPoem(id));
-    },
-    updatedPoem: () => {
-      dispatch(updatedPoem())
     },
     deletePoem: (id) => {
       dispatch(deletePoem(id))

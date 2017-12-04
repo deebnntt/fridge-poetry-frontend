@@ -35,7 +35,7 @@ class ShareCard extends React.Component {
       <Draggable handle=".handle">
         <div>
           <div style={{"position": "absolute", "top":-20, "left": 450}}>
-            <div className="handle">share<img src={dragIcon} className="drag-icon"/></div>
+            <div className="handle">Share<img src={dragIcon} className="drag-icon"/></div>
               <div className="share-card">
               <p className="twitter-share-button"><a href={url} target="_blank"><img src={twittericon} alt=""/></a></p>
               <div>{this.props.text ? this.displayPoem() : null}</div><br />

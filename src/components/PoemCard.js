@@ -22,8 +22,9 @@ class PoemCard extends React.Component {
 
   displayMagnets = () => {
     const string = this.parsedPoems()
-    const replaced = string.replace(/\n/, " ")
+    const replaced = string.replace(/[\n]/g, " ")
     const array = replaced.split(" ")
+    console.log(array)
     return array
     }
 

@@ -34,7 +34,7 @@ class TitleCard extends React.Component {
     return (
       <Draggable handle=".handle">
         <div style={{"position": "absolute", "top":150, "left": 50}}>
-            <div className="handle"><img src={dragIcon} className="drag-icon"/>title</div>
+            <div className="handle">Title<img src={dragIcon} className="drag-icon"/></div>
               <div className="title-card">
                 <h3>{ this.props.poem ? this.props.poem.title : this.state.title }</h3><br />
                 <TitleForm handleSubmit={this.handleSubmit}/>
