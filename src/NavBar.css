@@ -1,8 +1,9 @@
 div.Nav {
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 97%;
   height: 60px;
+  margin: auto;
 }
 
 div.Nav ul {
@@ -14,12 +15,13 @@ div.Nav ul {
 
 div.Nav li {
   float: right;
-  margin-right: 25px
+  margin-right: 0px
 }
 
 div.Nav li a {
   display: block;
-  padding: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
   font-size: 25px;
   text-decoration: none;
   font-weight: bold;
@@ -67,7 +69,7 @@ div.Nav h1 {
 .magnet-icon {
 	height: 32px;
   position: absolute;
-  right: 135px;
+  right: 105px;
   transition: all .25s linear;
   top: 7px
 }
