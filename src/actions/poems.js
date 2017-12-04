@@ -61,3 +61,19 @@ export function updatedPoem() {
     type: "POEM_UPDATED"
   }
 }
+
+export function deletePoem(id, data) {
+  return function(dispatch) {
+    PoemApi.deletePoem(id, data)
+      .then(json => {
+        dispatch({type: "DELETE_POEM",
+        payload: json})
+      })
+  }
+}
+
+export function resetPoemDeleted() {
+  return function(dispatch) {
+    dispatch({type: "RESET_POEM_DELETED"})
+      }
+  }

@@ -1,5 +1,5 @@
 export default function poemReducer(
-  state = {poems: [], newPoemCreated: false, currentPoem: null}, action) {
+  state = {poems: [], newPoemCreated: false, currentPoem: null, poemDeleted: false}, action) {
   switch (action.type) {
     case "CREATE_POEM":
       const newPoemState = {...state, newPoemCreated: true, currentPoem: action.payload}
@@ -26,5 +26,12 @@ export default function poemReducer(
       return { ...state, isLoading: true };
     case "POEM_UPDATED":
       return {...state, poem: null}
+    case "DELETE_POEM":
+      const deletedState = {...state, poemDeleted: true}
+      return deletedState
+    case "RESET_POEM_DELETED":
+      const resetDeletedState = {...state, poemDeleted: false}
+      console.log("did i make it")
+      return resetDeletedState
   }
 }

@@ -3,6 +3,7 @@ import Draggable from 'react-draggable';
 import { connect } from 'react-redux';
 import { updatePoem } from '../actions/poems.js'
 import { CirclePicker } from 'react-color';
+import dragIcon from './../drag-icon.png'
 
 class ColorCard extends React.Component {
 
@@ -18,14 +19,15 @@ class ColorCard extends React.Component {
   render() {
 
   const colors = [
-    "#FFB6C1", "#dda0dd", "#f5f5f5", 	"#aeeeee", "#c6e2ff", "#87cefa", "#ffe4e1", "#bc8f8f", "#ffffe0", "#ffeb3b", "#999999", "#b0b0b0",
-    "#8470ff", "#ff5722", "#ff00ff", "#ffeb3b", "#76ee00", "#cddc39",
+    "#FFB6C1", "#dda0dd", "#c6e2ff", "#87cefa", "#aeeeee", "#C1FFC1",  "#ffffe0", "#f5f5f5", "#ffe4e1", "#bc8f8f", "#999999", "#b0b0b0",
+    "#8470ff", "#ff00ff", "#ff5722", "#ffeb3b", "#cddc39", "#76ee00"
   ]
+
 
     return (
       <Draggable handle=".handle">
         <div style={{"position": "absolute", "top":150, "left": 900}}>
-            <div className="handle"><h3>COLOR</h3></div>
+            <div className="handle">color<img src={dragIcon} className="drag-icon"/></div>
               <div className="color-card">
                 <CirclePicker onChangeComplete={ this.handleChangeComplete} colors={colors}/>
               </div>

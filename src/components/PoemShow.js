@@ -1,11 +1,13 @@
 import React from 'react';
 import MagnetDiv from './MagnetDiv.js'
 import { connect } from 'react-redux';
-import { fetchPoem, updatedPoem } from "../actions/poems.js"
+import { fetchPoem, updatedPoem, deletePoem, resetPoemDeleted } from "../actions/poems.js"
 import TitleCard from './TitleCard.js'
 import ShareCard from './ShareCard.js'
 import ColorCard from './ColorCard.js'
 import poemParser from '../services/poemParser.js'
+import DeleteButton from './DeleteButton.js'
+import { Redirect } from 'react-router'
 
 
 class PoemShow extends React.Component {
@@ -29,7 +31,7 @@ class PoemShow extends React.Component {
   }
 
   componentWillUnmount() {
-   this.props.updatedPoem()
+   this.props.resetPoemDeleted()
   }
 
   parsedPoems = () => {
@@ -37,6 +39,12 @@ class PoemShow extends React.Component {
    const bucketed = poemParser.digest(magnetArray)
    const stringifiedPoem = poemParser.sortRows(bucketed)
    return stringifiedPoem
+  }
+
+  handleDelete = () => {
+    let id = this.props.match.params.id
+    this.props.deletePoem(id)
+    console.log("deleting")
   }
 
   mappedMagnets = () => this.props.poem.magnets.map((m, index) => {
@@ -51,15 +59,17 @@ class PoemShow extends React.Component {
         <TitleCard poemId={this.props.match.params.id}/>
         <ShareCard text={this.props.poem ? this.parsedPoems() : null} />
         <ColorCard poemId={this.props.match.params.id} handleChangeComplete={this.handleChangeComplete}/>
+        <DeleteButton handleDelete={this.handleDelete}/>
+        {this.props.poemDeleted ? <Redirect push to="/list" /> : null}
 			</div>
 		)
   }
-
 }
 
 function mapStateToProps(state) {
   return {
-    poem: state.poem.poem
+    poem: state.poem.poem,
+    poemDeleted: state.poem.poemDeleted
     }
   }
 
@@ -70,6 +80,12 @@ function mapDispatchToProps(dispatch) {
     },
     updatedPoem: () => {
       dispatch(updatedPoem())
+    },
+    deletePoem: (id) => {
+      dispatch(deletePoem(id))
+    },
+    resetPoemDeleted: () => {
+      dispatch(resetPoemDeleted())
     }
   };
 }

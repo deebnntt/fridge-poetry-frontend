@@ -1,6 +1,8 @@
 import React from 'react'
-import Draggable from 'react-draggable';
+import Draggable from 'react-draggable'
 import twittericon from '../twitter.svg'
+import dragIcon from './../drag-icon.png'
+
 
 class ShareCard extends React.Component {
 
@@ -33,7 +35,7 @@ class ShareCard extends React.Component {
       <Draggable handle=".handle">
         <div>
           <div style={{"position": "absolute", "top":-20, "left": 450}}>
-            <div className="handle"><h3>SHARE</h3></div>
+            <div className="handle">share<img src={dragIcon} className="drag-icon"/></div>
               <div className="share-card">
               <p className="twitter-share-button"><a href={url} target="_blank"><img src={twittericon} alt=""/></a></p>
               <div>{this.props.text ? this.displayPoem() : null}</div><br />

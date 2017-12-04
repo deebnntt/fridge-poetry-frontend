@@ -10,7 +10,6 @@ export default class PoemApi {
     })
   }
 
-
   static fetchPoem(id) {
     const poemId = id
     return fetch(
@@ -38,4 +37,18 @@ export default class PoemApi {
       .then(res => res.json())
     }
 
-}
+    static deletePoem(id) {
+      const poemId = id
+      let obj = { delete: 'hi' }
+      return fetch(
+        `http://localhost:3000/api/v1/poems/${poemId}`,{
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify(obj)
+        })
+      }
+
+  }

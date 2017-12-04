@@ -32,7 +32,7 @@ class TitleForm extends React.Component {
     return (
         <div className="title-form">
           <form onSubmit={this.handleSubmit}>
-            <input type="text" className="input-text" placeholder="name poem" value={this.state.input} onChange={this.handleInputChange}/><br/>
+            <input type="text" className="input-text" placeholder="edit title" value={this.state.input} onChange={this.handleInputChange}/><br/>
             <input className="button-small" value="submit" type="submit"/>
           </form>
         </div>

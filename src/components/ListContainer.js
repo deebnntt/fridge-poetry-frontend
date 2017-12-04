@@ -56,7 +56,8 @@ class ListContainer extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    poems: state.poem
+    poems: state.poem,
+    poemDeleted: state.poem.poemDeleted
   };
 }
 
