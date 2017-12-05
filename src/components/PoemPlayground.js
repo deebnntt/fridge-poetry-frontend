@@ -55,7 +55,7 @@ class PoemPlayground extends React.Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 		const array = this.state.poem
-		const id = this.props.currentUser.id
+		const id = this.props.id
 		const data =
 			{
 			  "poem": {
@@ -63,7 +63,6 @@ class PoemPlayground extends React.Component {
 					"user_id": id
 			  }
 			}
-		console.log(data)
 		this.props.createPoem(data)
 	}
 
@@ -95,7 +94,6 @@ const mapStateToProps = (state) => {
 	console.log(state)
   return {
     newPoemCreated: state.poem.newPoemCreated,
-		currentUser: state.user.currentUser
   }
 }
 

@@ -9,7 +9,6 @@ class CreateContainer extends React.Component {
   componentDidMount() {
 		this.props.fetchWords()
     if (!this.props.currentUser.id) {
-      console.log("i'm doing something")
       this.props.fetchCurrentUser()
     }
   }
@@ -17,7 +16,7 @@ class CreateContainer extends React.Component {
   render() {
     return (
         <div className="container-div">
-          <PoemPlayground className="playground" words={this.props.words} currentPoem={this.props.currentPoem}/>
+          <PoemPlayground className="playground" id={this.props.currentUser.id} words={this.props.words} currentPoem={this.props.currentPoem}/>
         </div>
     )
   }
@@ -38,8 +37,8 @@ function mapDispatchToProps(dispatch) {
     fetchWords: () => {
       dispatch(fetchWords());
     },
-    fetchCurrentUser: (id) => {
-      dispatch(fetchCurrentUser(id));
+    fetchCurrentUser: () => {
+      dispatch(fetchCurrentUser());
     }
   };
 }

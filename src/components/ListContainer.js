@@ -2,6 +2,7 @@ import React from 'react'
 import PoemCard from './PoemCard.js'
 import { connect } from "react-redux";
 import { fetchPoems } from "../actions/poems.js";
+import { fetchCurrentUser } from "../actions/users.js"
 import Search from './Search.js';
 import poemParser from '../services/poemParser.js'
 
@@ -16,6 +17,9 @@ class ListContainer extends React.Component {
 
   componentDidMount() {
 		this.props.fetchPoems()
+    if (!this.props.currentUser.id) {
+      this.props.fetchCurrentUser()
+    }
 	}
 
   handleChange = (search) => {
@@ -24,7 +28,11 @@ class ListContainer extends React.Component {
     })
   }
 
-  filteredPoems = () => this.props.poems.poems.filter((p) => {
+  filterForUser = () => this.props.poems.poems.filter((p) => {
+    return p.user_id === this.props.currentUser.id
+  })
+
+  filteredPoems = () => this.filterForUser().filter((p) => {
     const magnetArray = p.magnets
     const bucketed = poemParser.digest(magnetArray)
     const stringifiedPoem = poemParser.sortRows(bucketed)
@@ -56,7 +64,8 @@ class ListContainer extends React.Component {
 function mapStateToProps(state) {
   return {
     poems: state.poem,
-    poemDeleted: state.poem.poemDeleted
+    poemDeleted: state.poem.poemDeleted,
+    currentUser: state.user.currentUser
   };
 }
 
@@ -64,6 +73,9 @@ function mapDispatchToProps(dispatch) {
   return {
     fetchPoems: () => {
       dispatch(fetchPoems());
+    },
+    fetchCurrentUser: () => {
+      dispatch(fetchCurrentUser());
     }
   };
 }

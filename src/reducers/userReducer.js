@@ -7,14 +7,12 @@ export default function userReducer(
       localStorage.setItem("jwtToken", action.payload.jwt)
       return {...state, currentUser: action.payload.user}
     case 'LOGIN_USER':
-			console.log("i'm getting here")
       localStorage.setItem("jwtToken", action.payload.jwt)
       return {...state, currentUser: action.payload.user}
     case 'LOGOUT_USER':
       localStorage.removeItem('jwtToken')
       return {...state, currentUser: {}}
     case 'FETCH_CURRENT_USER':
-		console.log("i've been fetched", action.payload)
       return {...state, currentUser: action.payload}
 
 		default:
