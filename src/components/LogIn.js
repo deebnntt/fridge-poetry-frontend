@@ -1,40 +1,34 @@
 import React from 'react'
-import LogInForm from './LogInForm.js'
 import { Redirect } from 'react-router'
 
 class LogIn extends React.Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-			username: '',
-			password: ''
-		}
-	}
+    state= {
+      username: '',
+      password: ''
+    }
 
-	handleSubmit = (e) => {
-		e.preventDefault()
-		console.log('at least this part works', this.state.email, this.state.pass)
+    handleSubmit = (e) => {
+      e.preventDefault()
+      console.log("in handle submit")
+      this.props.loginUser(this.state)
+    }
 
-	}
-
-	handleUsernameChange = (e) => {
-		this.setState({
-			email: e.target.value
-		})
-	}
-
-	handlePassChange = (e) => {
-		this.setState({
-			pass: e.target.value
-		})
-	}
+    handleChange = (e) => {
+      const name = e.target.name
+      const value = e.target.value
+      this.setState({[name]: value})
+    }
 
   render() {
 
     return (
-      <div className="list-container">
-        <LogInForm handleSubmit={this.handleChange} handlePassChange={this.handlePassChange} handleUsernameChange={this.handleUsernameChange}/>
+      <div className="login-div">
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" className="login" value={this.state.username} name="username" placeholder="username" onChange={this.handleChange} />
+          <input type="password" className="login" value={this.state.password} name="password" placeholder="password" onChange={this.handleChange}/>
+          <input type="submit" value="Sign In" className="submit-button" />
+        </form>
       </div>
     )
   }
