@@ -54,14 +54,16 @@ class PoemPlayground extends React.Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(this.state.poem)
 		const array = this.state.poem
+		const id = this.props.currentUser.id
 		const data =
 			{
 			  "poem": {
-			  	"magnet": array
+			  	"magnet": array,
+					"user_id": id
 			  }
 			}
+		console.log(data)
 		this.props.createPoem(data)
 	}
 
@@ -90,8 +92,10 @@ class PoemPlayground extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+	console.log(state)
   return {
-    newPoemCreated: state.poem.newPoemCreated
+    newPoemCreated: state.poem.newPoemCreated,
+		currentUser: state.user.currentUser
   }
 }
 

@@ -45,6 +45,8 @@ export const fetchCurrentUser = () => {
       }
     })
       .then(res => res.json())
-      .then(payload => dispatch({ type: 'FETCH_CURRENT_USER', payload }));
+      .then(payload => {
+				console.log(payload)
+				dispatch({ type: 'FETCH_CURRENT_USER', payload })});
   };
 }

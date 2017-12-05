@@ -17,14 +17,13 @@ class App extends Component {
   }
 
   render() {
-    const AuthHome = authorize(Home)
 
     return (
       <Router>
         <div className="App">
           <NavBar />
           <div className="app-body">
-            <Route exact path='/' render={(props) => <AuthHome {...props}/>} />
+            <Route exact path='/' component={Home} />
             <Route exact path='/list' component={ListContainer}/>
             <Route exact path='/playground' component={CreateContainer}/>
             <Route exact path='/poems/:id' component={PoemShow}/>

@@ -13,8 +13,8 @@ import { Redirect } from 'react-router'
 class PoemShow extends React.Component {
 
   componentDidMount() {
-    let id = this.props.match.params.id
-    this.props.fetchPoem(id)
+    let poemId = this.props.match.params.id
+    this.props.fetchPoem(poemId)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -69,7 +69,7 @@ class PoemShow extends React.Component {
 function mapStateToProps(state) {
   return {
     poem: state.poem.poem,
-    poemDeleted: state.poem.poemDeleted
+    poemDeleted: state.poem.poemDeleted,
     }
   }
 

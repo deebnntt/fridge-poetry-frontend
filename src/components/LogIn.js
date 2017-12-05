@@ -1,5 +1,7 @@
 import React from 'react'
 import { Redirect } from 'react-router'
+import { loginUser } from '../actions/users'
+import { connect } from 'react-redux'
 
 class LogIn extends React.Component {
 
@@ -34,4 +36,17 @@ class LogIn extends React.Component {
   }
 }
 
-export default LogIn
+const mapStateToProps= (state) => {
+  console.log(state)
+  return {
+    currentUser: state.user.currentUser
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return ({
+    loginUser: (params) => dispatch(loginUser(params)),
+  })
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LogIn)

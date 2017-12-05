@@ -14,7 +14,9 @@ export default function userReducer(
       localStorage.removeItem('jwtToken')
       return {...state, currentUser: {}}
     case 'FETCH_CURRENT_USER':
+		console.log("i've been fetched", action.payload)
       return {...state, currentUser: action.payload}
+
 		default:
 			return state;
   }
