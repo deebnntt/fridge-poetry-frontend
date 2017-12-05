@@ -45,7 +45,7 @@ class CommunityContainer extends React.Component {
   })
 
   mappedPoems = () => this.filteredPoems().map((p, index) => {
-    return <PoemCard className="poem-card" key={index} poemTitle={p.title} poemId={p.id} magnets={p.magnets} color={p.color}/>
+    return <PoemCard className="poem-card" key={index} poemTitle={p.title} poemId={p.id} magnets={p.magnets} color={p.color} user={p.user.username}/>
   })
 
   render() {

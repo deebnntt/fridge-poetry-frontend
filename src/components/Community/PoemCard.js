@@ -1,6 +1,5 @@
 import React from 'react'
 import CardMagnet from './CardMagnet.js'
-import { Link } from 'react-router-dom';
 import poemParser from '../../services/poemParser.js'
 
 class PoemCard extends React.Component {
@@ -33,11 +32,9 @@ class PoemCard extends React.Component {
 
   render() {
 
-    const url = `poems/${this.props.poemId}`
-
     return (
       <div className="poem-card">
-        <h3><Link className="detail-link" to={url}>{this.title()}</Link></h3>
+        <h3>{this.title()} by {this.props.user}</h3>
         <div>{this.mappedMagnets()}</div><br/>
       </div>
     )

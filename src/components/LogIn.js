@@ -12,7 +12,6 @@ class LogIn extends React.Component {
 
     handleSubmit = (e) => {
       e.preventDefault()
-      console.log("in handle submit")
       this.props.loginUser(this.state)
     }
 
@@ -39,7 +38,6 @@ class LogIn extends React.Component {
 }
 
 const mapStateToProps= (state) => {
-  console.log(state)
   return {
     currentUser: state.user.currentUser
   }

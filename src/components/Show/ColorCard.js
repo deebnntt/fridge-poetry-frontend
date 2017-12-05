@@ -27,7 +27,7 @@ class ColorCard extends React.Component {
     return (
       <Draggable handle=".handle">
         <div style={{"position": "absolute", "top":150, "left": 900}}>
-            <div className="handle">Color<img src={dragIcon} className="drag-icon"/></div>
+            <div className="handle">Color<img src={dragIcon} alt="" className="drag-icon"/></div>
               <div className="color-card">
                 <CirclePicker onChangeComplete={ this.handleChangeComplete} colors={colors}/>
               </div>

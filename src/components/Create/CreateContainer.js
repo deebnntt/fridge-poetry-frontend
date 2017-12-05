@@ -23,7 +23,6 @@ class CreateContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state)
   return {
     currentPoem: state.poem.currentPoem,
     words: state.words.words,

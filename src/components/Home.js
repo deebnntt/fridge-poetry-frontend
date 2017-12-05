@@ -1,7 +1,6 @@
 import React from 'react'
 import LogIn from './LogIn.js'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import { Redirect } from 'react-router'
 
 class Home extends React.Component {

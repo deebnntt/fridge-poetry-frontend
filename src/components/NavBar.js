@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import '../NavBar.css';
 import { Link } from 'react-router-dom'
-import magnet from '../magnet.svg'
 import touchscreen from '../touchscreen.svg'
 import { logoutUser } from '../actions/users'
 import { bindActionCreators } from 'redux'
@@ -9,8 +8,7 @@ import { connect } from 'react-redux'
 
 class NavBar extends Component {
 
-	handleLogout = (event) => {
-		event.preventDefault
+	handleLogout = () => {
 		localStorage.removeItem('jwtToken')
 		this.props.logoutUser()
 	}
@@ -45,4 +43,4 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(NavBar)
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar)

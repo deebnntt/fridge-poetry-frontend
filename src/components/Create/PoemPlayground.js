@@ -91,7 +91,6 @@ class PoemPlayground extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-	console.log(state)
   return {
     newPoemCreated: state.poem.newPoemCreated,
   }
