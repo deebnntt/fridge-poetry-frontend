@@ -1,11 +1,11 @@
 import React from 'react';
 import MagnetDiv from './MagnetDiv.js'
 import { connect } from 'react-redux';
-import { fetchPoem, deletePoem, resetPoemDeleted } from "../actions/poems.js"
+import { fetchPoem, deletePoem, resetPoemDeleted } from "../../actions/poems.js"
 import TitleCard from './TitleCard.js'
 import ShareCard from './ShareCard.js'
 import ColorCard from './ColorCard.js'
-import poemParser from '../services/poemParser.js'
+import poemParser from '../../services/poemParser.js'
 import DeleteButton from './DeleteButton.js'
 import { Redirect } from 'react-router'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import CardMagnet from './CardMagnet.js'
 import { Link } from 'react-router-dom';
-import poemParser from '../services/poemParser.js'
+import poemParser from '../../services/poemParser.js'
 
 class PoemCard extends React.Component {
 

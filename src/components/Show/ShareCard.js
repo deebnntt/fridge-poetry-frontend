@@ -1,7 +1,7 @@
 import React from 'react'
 import Draggable from 'react-draggable'
-import twittericon from '../twitter.svg'
-import dragIcon from './../drag-icon.png'
+import twittericon from '../../twitter.svg'
+import dragIcon from '../../drag-icon.png'
 
 
 class ShareCard extends React.Component {

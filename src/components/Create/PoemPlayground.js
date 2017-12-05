@@ -2,7 +2,7 @@ import React from 'react';
 import WordDiv from './WordDiv.js'
 import SaveButton from './SaveButton.js'
 import { connect } from 'react-redux';
-import { createPoem, resetNewPoemCreated } from '../actions/poems.js'
+import { createPoem, resetNewPoemCreated } from '../../actions/poems.js'
 import { Redirect } from 'react-router'
 import Divider from "./Divider.js"
 

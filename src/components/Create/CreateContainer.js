@@ -1,8 +1,8 @@
 import React from 'react'
 import PoemPlayground from './PoemPlayground.js'
 import { connect } from "react-redux";
-import { fetchWords } from "../actions/words.js"
-import { fetchCurrentUser } from "../actions/users.js"
+import { fetchWords } from "../../actions/words.js"
+import { fetchCurrentUser } from "../../actions/users.js"
 
 class CreateContainer extends React.Component {
 

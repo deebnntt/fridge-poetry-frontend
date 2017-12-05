@@ -1,9 +1,9 @@
 import React from 'react'
 import Draggable from 'react-draggable';
 import { connect } from 'react-redux';
-import { updatePoem } from '../actions/poems.js'
+import { updatePoem } from '../../actions/poems.js'
 import { CirclePicker } from 'react-color';
-import dragIcon from './../drag-icon.png'
+import dragIcon from '../../drag-icon.png'
 
 class ColorCard extends React.Component {
 

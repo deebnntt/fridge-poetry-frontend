@@ -25,7 +25,7 @@ class NavBar extends Component {
 						<Link to="/list">MY COLLECTION</Link>
 					</li>
 					<li>
-						<Link to="/list">COMMUNITY</Link>
+						<Link to="/community">COMMUNITY</Link>
 					</li>
 				</ul>
 			</div>

@@ -2,8 +2,8 @@ import React from 'react'
 import Draggable from 'react-draggable';
 import TitleForm from './TitleForm.js'
 import { connect } from 'react-redux';
-import { updatePoem } from '../actions/poems.js'
-import dragIcon from './../drag-icon.png'
+import { updatePoem } from '../../actions/poems.js'
+import dragIcon from '../../drag-icon.png'
 
 class TitleCard extends React.Component {
 

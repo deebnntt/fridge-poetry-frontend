@@ -1,10 +1,10 @@
 import React from 'react'
 import PoemCard from './PoemCard.js'
 import { connect } from "react-redux";
-import { fetchPoems } from "../actions/poems.js";
-import { fetchCurrentUser } from "../actions/users.js"
+import { fetchPoems } from "../../actions/poems.js";
+import { fetchCurrentUser } from "../../actions/users.js"
 import Search from './Search.js';
-import poemParser from '../services/poemParser.js'
+import poemParser from '../../services/poemParser.js'
 
 class ListContainer extends React.Component {
 
