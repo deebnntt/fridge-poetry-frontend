@@ -7,9 +7,9 @@ import { BrowserRouter as Router } from "react-router-dom"
 import { Route } from "react-router-dom"
 import NavBar from "./components/NavBar.js"
 import { connect } from 'react-redux'
-import authorize from './components/authorize'
 import Home from './components/Home.js'
 import SignUp from './components/SignUp.js'
+import { Redirect } from 'react-router'
 
 class App extends Component {
 
@@ -23,6 +23,7 @@ class App extends Component {
       <Router>
         <div className="App">
           {this.props.currentUser.id ? <NavBar /> : null}
+          {!this.props.currentUser.id ? <Redirect push to="/" /> : null}
           <div className="app-body">
             <Route exact path='/' component={Home} />
             <Route exact path='/signup' component={SignUp} />
