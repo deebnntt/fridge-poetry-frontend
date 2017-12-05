@@ -20,12 +20,12 @@ class NavBar extends Component {
 			<div className="Nav">
 				<ul>
         <h1><Link className="logo" to="/playground">mag.NET</Link><img src={touchscreen} className="touch-icon" alt=""/></h1>
+					<li onClick={this.handleLogout} className="navlink">LOGOUT</li>
 					<li>
-						<Link to="/list">POEMS</Link>
+						<Link to="/list">MY COLLECTION</Link>
 					</li>
-					<li onClick={this.handleLogout}>LOGOUT</li>
 					<li>
-						<img src={magnet} className="magnet-icon" alt=""/>
+						<Link to="/list">COMMUNITY</Link>
 					</li>
 				</ul>
 			</div>

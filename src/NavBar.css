@@ -14,15 +14,29 @@ div.Nav ul {
 }
 
 div.Nav li {
+  /*position: fixed;*/
   float: right;
-  margin-right: 0px
+  /*margin-right: 0px;*/
+  display: block;
+  padding-top: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  font-style: italic;
+  color: black
+}
+
+div.Nav li:hover {
+  display: block;
+  color: pink;
+  cursor: pointer
 }
 
 div.Nav li a {
   display: block;
-  padding-top: 10px;
   padding-right: 10px;
-  font-size: 25px;
+  font-size: 16px;
   text-decoration: none;
   font-weight: bold;
   font-style: italic;
