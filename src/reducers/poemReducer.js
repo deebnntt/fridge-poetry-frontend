@@ -31,7 +31,6 @@ export default function poemReducer(
       return deletedState
     case "RESET_POEM_DELETED":
       const resetDeletedState = {...state, poemDeleted: false}
-      console.log("did i make it")
       return resetDeletedState
   }
 }

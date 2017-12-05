@@ -92,7 +92,7 @@ h1 {
 }
 
 .DeleteDiv {
-  position: fixed;
+  position: absolute;
   bottom: 15px;
   left: 15px;
 }
@@ -125,7 +125,7 @@ hr {
 
 .poem-card {
   height: 200px;
-  width: 40%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
@@ -133,6 +133,17 @@ hr {
 	/*background-color: #C2F3F2;*/
   border: 1px solid black;
   box-shadow: 5px 5px 4px #888888;
+}
+
+.card-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 5px
+}
+
+.list-container {
+	width: 100%;
+	margin: auto
 }
 
 h3 {
@@ -155,18 +166,39 @@ h3 {
 }
 
 .search-div {
-  margin: auto;
-  width: 50%;
-	padding-top: 40px;
-	padding-bottom: 50px
+  margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+  width: 30%;
+	padding: 10px;
+	background-color: #C2F3F2;
+	border: 0.5px solid black;
+	box-shadow: 5px 5px 4px #888888;
+}
+
+.search-handle {
+	font-family: "PT Mono";
+	font-size: 14px;
+	/*text-align: center;*/
+	font-weight: bolder;
+	background-color: #c6c6c6;
+	padding: 1.5px;
+	padding-left: 5px;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid white;
+	box-shadow: 5px 5px 4px #888888;
+	cursor: move;
+	margin: auto;
+	width: 31%;
 }
 
 .search {
   margin: auto;
   width: 95%;
-	height: 30px;
 	background-color: #C2F3F2;
-	font-size: 25px;
+	font-size: 15px;
 	font-style: italic;
 	box-sizing: border-box;
 	border: 1px solid #555;
@@ -176,6 +208,14 @@ h3 {
 
 .search:focus {
   background-color: pink;
+}
+
+.search-icon {
+	padding-left: 4px;
+	height: 13px;
+	float: right;
+	margin-right: 2px;
+	margin-top: 1.5px
 }
 
 .title-card {
@@ -226,10 +266,6 @@ h3 {
 	float: right;
 	margin-right: 2px;
 	margin-top: 1.5px
-}
-
-.search-icon {
-	padding-left: 4px
 }
 
 .share-box {
@@ -287,7 +323,7 @@ h3 {
 	font-size: 14px;
 	/*text-align: center;*/
 	font-weight: bolder;
-	background-color: #b0b0b0;
+	background-color: #c6c6c6;
 	padding: 1.5px;
 	padding-left: 5px;
 	border-top: 1px solid black;

@@ -22,7 +22,6 @@ class ListContainer extends React.Component {
     this.setState({
       searchTerm: search
     })
-    console.log(this.state.searchTerm)
   }
 
   filteredPoems = () => this.props.poems.poems.filter((p) => {

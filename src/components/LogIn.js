@@ -6,26 +6,35 @@ class LogIn extends React.Component {
 
   constructor(props) {
     super(props)
-      this.state = {
-        loggedIn: false
-      }
-  }
-
-  componentDidMount() {
+    this.state = {
+			username: '',
+			password: ''
+		}
 	}
 
-  handleSubmit = (event) => {
-    event.preventDefault()
-    this.setState({
-      loggedIn: true
-    })
-  }
+	handleSubmit = (e) => {
+		e.preventDefault()
+		console.log('at least this part works', this.state.email, this.state.pass)
+
+	}
+
+	handleUsernameChange = (e) => {
+		this.setState({
+			email: e.target.value
+		})
+	}
+
+	handlePassChange = (e) => {
+		this.setState({
+			pass: e.target.value
+		})
+	}
+
   render() {
 
     return (
       <div className="list-container">
-        <LogInForm handleSubmit={this.handleChange}/>
-        {this.state.loggedIn ? <Redirect push to="/playground" /> : null}
+        <LogInForm handleSubmit={this.handleChange} handlePassChange={this.handlePassChange} handleUsernameChange={this.handleUsernameChange}/>
       </div>
     )
   }

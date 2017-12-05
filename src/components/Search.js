@@ -12,8 +12,11 @@ class Search extends React.Component {
   render() {
 
     return (
+      <div>
+      <div className="search-handle">Search<img src={searchIcon} className="search-icon" alt=""/></div>
       <div className="search-div">
-        <input type="text" className="search" onChange={this.handleChange} /><img src={searchIcon} className="search-icon" alt=""/>
+        <input type="text" className="search" onChange={this.handleChange} />
+      </div>
       </div>
     )
   }
