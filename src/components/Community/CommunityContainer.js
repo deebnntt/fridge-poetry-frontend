@@ -70,7 +70,7 @@ class CommunityContainer extends React.Component {
     return (
       <div className="list-container">
         <Search handleChange={this.handleChange}/>
-        <div className="showall" onClick={this.handleShowAll}>Show All</div>
+        <div className="showall" onClick={this.handleShowAll}><p className="showall-link">Show All</p></div>
           <div className="card-container">
           {this.props.poems.poems ? this.mappedPoems() : null}
           </div>
