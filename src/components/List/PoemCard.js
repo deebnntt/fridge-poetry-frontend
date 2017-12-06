@@ -21,17 +21,31 @@ class PoemCard extends React.Component {
     return stringifiedPoem
   }
 
+  displayPoem = () => this.parsedPoems().split('\n').map(function(line, index) {
+    return  (
+      <span key={index}>
+        {line}
+        <br/>
+      </span>
+    )
+  })
 
   displayMagnets = () => {
     const string = this.parsedPoems()
-    const replaced = string.replace(/[\n]/g, " ")
-    const array = replaced.split(" ")
-    return array
+    const replaced = string.replace(/[\n]/g, " / ")
+    return replaced
   }
 
-  mappedMagnets = () => this.displayMagnets().map((m, index) => {
-      return <CardMagnet className="magnet" key={index} word={m} color={this.props.color}/>
-    })
+
+  mappedMagnets = () => {
+    let lines = this.displayMagnets().split(" / ")
+    let lineArray = lines.map(line => line.split(" "))
+    return lineArray.map((line, idx) => (
+      <div className="Line">
+        {line.map(word => <CardMagnet className="magnet" key={idx} word={word} color={this.props.color}/>)}
+      </div>
+    ))
+  }
 
   render() {
 
@@ -40,7 +54,7 @@ class PoemCard extends React.Component {
     return (
       <div className="poem-card">
         <h3><Link className="detail-link" to={url}>{this.title()}</Link></h3>
-        <div>{this.mappedMagnets()}</div><br/>
+        <div className="poem-display">{this.mappedMagnets()}</div><br/>
       </div>
     )
   }
