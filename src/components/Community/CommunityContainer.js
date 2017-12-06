@@ -11,7 +11,8 @@ class CommunityContainer extends React.Component {
   constructor(props) {
     super(props)
       this.state = {
-        searchTerm: null
+        searchTerm: null,
+        username: null
       }
   }
 
@@ -28,6 +29,20 @@ class CommunityContainer extends React.Component {
     })
   }
 
+  handleClick = (event) => {
+    let username = event.target.innerHTML
+    this.setState({
+      username: username
+    })
+  }
+
+  handleShowAll = () => {
+    this.setState({
+      username: null,
+      searchTerm: null
+    })
+  }
+
   filterForUser = () => this.props.poems.poems.filter((p) => {
     return p.user_id !== this.props.currentUser.id
   })
@@ -39,13 +54,15 @@ class CommunityContainer extends React.Component {
 
     if (this.state.searchTerm) {
         return stringifiedPoem.toLowerCase().includes(this.state.searchTerm.toLowerCase()) || p.title !== null && p.title.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    } else if (this.state.username) {
+        return p.user.username === this.state.username
     } else {
       return p
     }
   })
 
   mappedPoems = () => this.filteredPoems().map((p, index) => {
-    return <PoemCard className="poem-card" key={index} poemTitle={p.title} poemId={p.id} magnets={p.magnets} color={p.color} user={p.user.username}/>
+    return <PoemCard className="poem-card" key={index} poemTitle={p.title} poemId={p.id} magnets={p.magnets} color={p.color} user={p.user.username} handleClick={this.handleClick}/>
   })
 
   render() {
@@ -53,6 +70,7 @@ class CommunityContainer extends React.Component {
     return (
       <div className="list-container">
         <Search handleChange={this.handleChange}/>
+        <div className="showall" onClick={this.handleShowAll}>Show All</div>
           <div className="card-container">
           {this.props.poems.poems ? this.mappedPoems() : null}
           </div>
