@@ -7,10 +7,11 @@ class Home extends React.Component {
 
 
   render() {
+    console.log(this.props.currentUser.id);
     return(
       <div>
+      {this.props.currentUser.id ? <Redirect to="/playground"/> : null}
         <LogIn />
-        {this.props.currentUser.id ? <Redirect push to="/playground" /> : null}
       </div>
     )
   }
@@ -18,7 +19,8 @@ class Home extends React.Component {
 
 const mapStateToProps= (state) => {
   return {
-    currentUser: state.user.currentUser
+    currentUser: state.user.currentUser,
+    isLoggedIn: state.user.justLoggedIn
   }
 }
 

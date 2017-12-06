@@ -34,8 +34,8 @@ class PoemCard extends React.Component {
 
     return (
       <div className="poem-card">
-        <h3>{this.title()}</h3>
-        <h4 onClick={this.props.handleClick} value={this.props.user}>{this.props.user}</h4>
+        <h3 className="community-h3">{this.title()}</h3>
+        <span>by </span><span className="username" onClick={this.props.handleClick} value={this.props.user}>{this.props.user}</span>
         <div>{this.mappedMagnets()}</div><br/>
       </div>
     )

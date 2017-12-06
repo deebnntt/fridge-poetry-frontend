@@ -24,9 +24,9 @@ class App extends Component {
       <Router>
         <div className="App">
           {this.props.currentUser.id ? <NavBar /> : null}
-          {!this.props.currentUser.id ? <Redirect push to="/" /> : null}
           <div className="app-body">
-            <Route exact path='/' component={Home} />
+          {!localStorage.getItem("jwtToken") ? <Redirect to="/login"/> : null}
+            <Route exact path="/login" component={Home} />
             <Route exact path='/signup' component={SignUp} />
             <Route exact path='/list' component={ListContainer}/>
             <Route exact path='/playground' component={CreateContainer}/>
@@ -41,7 +41,8 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    currentUser: state.user.currentUser
+    currentUser: state.user.currentUser,
+    loggedIn: state.user.loggedIn
   };
 }
 

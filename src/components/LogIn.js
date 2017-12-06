@@ -1,7 +1,8 @@
 import React from 'react'
 import { loginUser } from '../actions/users'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router'
 
 class LogIn extends React.Component {
 
