@@ -420,3 +420,19 @@ h3 {
 	color: #C2F3F2;
 	cursor: pointer
 }
+
+.h5 {
+	margin: 0px
+}
+
+.poetry-text {
+	position: absolute;
+	min-width: 300px;
+	min-height: 150px;
+	background: white;
+	font-family: serif;
+	font-size: 20px;
+	border: 1px solid black;
+	padding: 5px;
+	z-index: 2
+}

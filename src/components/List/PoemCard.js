@@ -17,15 +17,17 @@ class PoemCard extends React.Component {
     const magnetArray = this.props.magnets
     const bucketed = poemParser.digest(magnetArray)
     const stringifiedPoem = poemParser.sortRows(bucketed)
+    console.log(stringifiedPoem)
     return stringifiedPoem
   }
+
 
   displayMagnets = () => {
     const string = this.parsedPoems()
     const replaced = string.replace(/[\n]/g, " ")
     const array = replaced.split(" ")
     return array
-    }
+  }
 
   mappedMagnets = () => this.displayMagnets().map((m, index) => {
       return <CardMagnet className="magnet" key={index} word={m} color={this.props.color}/>
