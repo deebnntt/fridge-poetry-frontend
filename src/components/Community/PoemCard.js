@@ -3,7 +3,6 @@ import CardMagnet from './CardMagnet.js'
 import poemParser from '../../services/poemParser.js'
 import ReactHover from 'react-hover'
 
-
 const optionsCursorTrueWithMargin = {
   followCursor: true,
   shiftX: 20,
@@ -39,15 +38,21 @@ class PoemCard extends React.Component {
 
   displayMagnets = () => {
     const string = this.parsedPoems()
-    const replaced = string.replace(/[\n]/g, " ")
-    const array = replaced.split(" ")
-    return array
-    }
+    const replaced = string.replace(/[\n]/g, " / ")
+    return replaced
+  }
 
 
-  mappedMagnets = () => this.displayMagnets().map((m, index) => {
-      return <CardMagnet className="magnet" key={index} word={m} color={this.props.color}/>
-    })
+  mappedMagnets = () => {
+    let lines = this.displayMagnets().split(" / ")
+    let lineArray = lines.map(line => line.split(" "))
+    return lineArray.map((line, idx) => (
+      <div className="Line">
+        {line.map(word => <CardMagnet className="magnet" key={idx} word={word} color={this.props.color}/>)}
+      </div>
+    ))
+  }
+
 
   render() {
 
@@ -60,11 +65,14 @@ class PoemCard extends React.Component {
        <ReactHover.Hover type='hover'>
          <div className="poetry-text">
          <strong>{this.title()}</strong><br/><br/>
-         {this.displayPoem()}</div>
+         {this.displayPoem()}
+
+
+         </div>
        </ReactHover.Hover>
       </ReactHover>
         <span>by </span><span className="username" onClick={this.props.handleClick} value={this.props.user}>{this.props.user}</span>
-        <div>{this.mappedMagnets()}</div><br/>
+        <div className="poem-display">{this.mappedMagnets()}</div><br/>
       </div>
     )
   }
