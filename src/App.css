@@ -131,7 +131,9 @@ hr {
 }
 
 .poem-card {
+	position: relative;
   min-height: 200px;
+	height: auto;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -174,8 +176,7 @@ h3 {
 
 .username:hover {
 	cursor: pointer;
-	color: #C2F3F2;
-	font-weight: normal;
+	font-weight: bold;
 }
 
 .detail-link {
@@ -424,7 +425,7 @@ h3 {
 .showall-link:hover {
 	text-align: center;
 	text-decoration: underline;
-	color: #C2F3F2;
+	font-weight: bold;
 	cursor: pointer
 }
 
@@ -434,7 +435,9 @@ h3 {
 
 .poem-display {
 	display: flex;
-	flex-direction: column
+	flex-direction: column;
+	height: auto;
+	padding-bottom: 8px
 }
 
 .line {
@@ -443,5 +446,28 @@ h3 {
 }
 
 .like-display {
-	float: right
+	margin-bottom: 0px;
+	margin-right: 2px;
+	font-size: 20px;
+	padding: 5px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.like-text {
+	float:right;
+	margin-right: 16px;
+	vertical-align: bottom;
+}
+
+.like-icon {
+	float:right;
+	height: 25px;
+	margin-right: 10px;
+	vertical-align: bottom;
+}
+
+.like-icon:hover {
+	cursor: pointer
 }

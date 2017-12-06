@@ -14,10 +14,6 @@ class TitleCard extends React.Component {
       }
   }
 
-  componentDidMount() {
-
-	}
-
   handleSubmit = (input) => {
     const id = this.props.poemId
     this.setState({

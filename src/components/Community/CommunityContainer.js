@@ -1,7 +1,7 @@
 import React from 'react'
 import PoemCard from './PoemCard.js'
 import { connect } from "react-redux";
-import { fetchPoems } from "../../actions/poems.js";
+import { fetchPoems, resetNewPoemCreated } from "../../actions/poems.js";
 import { fetchCurrentUser } from "../../actions/users.js"
 import Search from './Search.js';
 import poemParser from '../../services/poemParser.js'
@@ -93,7 +93,8 @@ function mapStateToProps(state) {
   return {
     poems: state.poem,
     poemDeleted: state.poem.poemDeleted,
-    currentUser: state.user.currentUser
+    currentUser: state.user.currentUser,
+    likeAdded: state.poem.likeAdded
   };
 }
 
@@ -107,6 +108,9 @@ function mapDispatchToProps(dispatch) {
     },
     addLike: (params) => {
       dispatch(addLike(params))
+    },
+    resetNewPoemCreated: () => {
+      dispatch(resetNewPoemCreated())
     }
   }
 }

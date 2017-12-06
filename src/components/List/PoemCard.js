@@ -55,6 +55,9 @@ class PoemCard extends React.Component {
       <div className="poem-card">
         <h3><Link className="detail-link" to={url}>{this.title()}</Link></h3>
         <div className="poem-display">{this.mappedMagnets()}</div><br/>
+        <div className="like-display">
+          <span className="like-text">likes: {this.props.likes}</span>
+        </div>
       </div>
     )
   }

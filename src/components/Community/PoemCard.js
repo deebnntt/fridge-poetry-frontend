@@ -9,17 +9,7 @@ class PoemCard extends React.Component {
     likes: null
   }
 
-  componentDidMount() {
-    this.setState({
-      likes: this.props.likes
-    })
-  }
-
   handleClick = () => {
-    console.log(this.state)
-    this.setState({
-      likes: this.state.likes += 1
-    })
     this.props.handleLike(this.props.poemId)
   }
 
@@ -73,8 +63,8 @@ class PoemCard extends React.Component {
         <span>by </span><span className="username" onClick={this.props.handleClick} value={this.props.user}>{this.props.user}</span>
         <div className="poem-display">{this.mappedMagnets()}</div><br/>
         <div className="like-display">
-          {this.state.likes}
-          <img src={likeIcon} onClick={this.handleClick}/>
+          <span className="like-text">{this.props.likes}</span>
+          <img src={likeIcon} className="like-icon" onClick={this.handleClick}/>
         </div>
       </div>
     )
