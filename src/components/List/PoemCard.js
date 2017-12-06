@@ -40,9 +40,9 @@ class PoemCard extends React.Component {
   mappedMagnets = () => {
     let lines = this.displayMagnets().split(" / ")
     let lineArray = lines.map(line => line.split(" "))
-    return lineArray.map((line, idx) => (
+    return lineArray.map((line) => (
       <div className="Line">
-        {line.map(word => <CardMagnet className="magnet" key={idx} word={word} color={this.props.color}/>)}
+        {line.map(word => <CardMagnet className="magnet" word={word} color={this.props.color}/>)}
       </div>
     ))
   }

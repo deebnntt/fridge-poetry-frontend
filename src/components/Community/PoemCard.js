@@ -1,8 +1,27 @@
 import React from 'react'
 import CardMagnet from './CardMagnet.js'
 import poemParser from '../../services/poemParser.js'
+import likeIcon from '../../heart.svg'
 
 class PoemCard extends React.Component {
+
+  state = {
+    likes: null
+  }
+
+  componentDidMount() {
+    this.setState({
+      likes: this.props.likes
+    })
+  }
+
+  handleClick = () => {
+    console.log(this.state)
+    this.setState({
+      likes: this.state.likes += 1
+    })
+    this.props.handleLike(this.props.poemId)
+  }
 
   title = () => {
     if (this.props.poemTitle == null) {
@@ -16,7 +35,6 @@ class PoemCard extends React.Component {
     const magnetArray = this.props.magnets
     const bucketed = poemParser.digest(magnetArray)
     const stringifiedPoem = poemParser.sortRows(bucketed)
-    console.log(stringifiedPoem)
     return stringifiedPoem
   }
 
@@ -39,9 +57,9 @@ class PoemCard extends React.Component {
   mappedMagnets = () => {
     let lines = this.displayMagnets().split(" / ")
     let lineArray = lines.map(line => line.split(" "))
-    return lineArray.map((line, idx) => (
+    return lineArray.map((line) => (
       <div className="Line">
-        {line.map(word => <CardMagnet className="magnet" key={idx} word={word} color={this.props.color}/>)}
+        {line.map(word => <CardMagnet className="magnet" word={word} color={this.props.color}/>)}
       </div>
     ))
   }
@@ -54,6 +72,10 @@ class PoemCard extends React.Component {
         <h3 className="community-h3">{this.title()}</h3>
         <span>by </span><span className="username" onClick={this.props.handleClick} value={this.props.user}>{this.props.user}</span>
         <div className="poem-display">{this.mappedMagnets()}</div><br/>
+        <div className="like-display">
+          {this.state.likes}
+          <img src={likeIcon} onClick={this.handleClick}/>
+        </div>
       </div>
     )
   }

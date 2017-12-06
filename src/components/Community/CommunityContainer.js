@@ -5,6 +5,7 @@ import { fetchPoems } from "../../actions/poems.js";
 import { fetchCurrentUser } from "../../actions/users.js"
 import Search from './Search.js';
 import poemParser from '../../services/poemParser.js'
+import addLike from '../../actions/likes.js'
 
 class CommunityContainer extends React.Component {
 
@@ -27,6 +28,15 @@ class CommunityContainer extends React.Component {
     this.setState({
       searchTerm: search
     })
+  }
+
+  handleLike = (poemId) => {
+    const userId = this.props.currentUser.id
+    const data = {
+      "poem_id": poemId,
+      "user_id": userId
+    }
+    this.props.addLike(data)
   }
 
   handleClick = (event) => {
@@ -62,7 +72,7 @@ class CommunityContainer extends React.Component {
   })
 
   mappedPoems = () => this.filteredPoems().map((p, index) => {
-    return <PoemCard className="poem-card" key={index} poemTitle={p.title} poemId={p.id} magnets={p.magnets} color={p.color} user={p.user.username} handleClick={this.handleClick}/>
+    return <PoemCard className="poem-card" key={index} poemTitle={p.title} poemId={p.id} magnets={p.magnets} color={p.color} user={p.user.username} handleClick={this.handleClick} likes={p.likes.length} handleLike={this.handleLike}/>
   })
 
   render() {
@@ -90,12 +100,15 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     fetchPoems: () => {
-      dispatch(fetchPoems());
+      dispatch(fetchPoems())
     },
     fetchCurrentUser: () => {
-      dispatch(fetchCurrentUser());
+      dispatch(fetchCurrentUser())
+    },
+    addLike: (params) => {
+      dispatch(addLike(params))
     }
-  };
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CommunityContainer)

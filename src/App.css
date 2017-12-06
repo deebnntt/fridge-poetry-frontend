@@ -441,3 +441,7 @@ h3 {
 	display: flex;
 	flex-direction: row
 }
+
+.like-display {
+	float: right
+}
