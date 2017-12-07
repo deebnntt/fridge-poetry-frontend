@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          {this.props.currentUser.id ? <NavBar /> : null}
+          {localStorage.getItem("jwtToken") ? <NavBar /> : null}
           <div className="app-body">
           {!localStorage.getItem("jwtToken") ? <Redirect to="/login"/> : null}
             <Route exact path="/login" component={Home} />
