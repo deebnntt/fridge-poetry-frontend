@@ -6,3 +6,5 @@ An interactive drag-and-drop experience where users can create poems from a data
 + Used the React Draggable library (https://github.com/mzabriskie/react-draggable) for draggable functionality
 + Poems persist with X and Y page coordinates and are then stringified based on a row arrangment
 + User interface designed with custom CSS
+
+Demo Video: https://vimeo.com/247390566
