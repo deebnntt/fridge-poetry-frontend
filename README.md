@@ -8,3 +8,5 @@ An interactive drag-and-drop experience where users can create poems from a data
 + User interface designed with custom CSS
 
 Demo Video: https://vimeo.com/247390566
+
+![](https://media.giphy.com/media/3ohs7KmPlqQ0npAxRm/giphy.gif)
