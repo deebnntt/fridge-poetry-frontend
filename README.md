@@ -1,4 +1,4 @@
-An interactive drag-and-drop experience where users can create poems from a database of randomized words, save, and share.
+An interactive drag-and-drop experience where users can create poems from a database of randomized words, save, and share
 
 + Ruby on Rails backend API to provides a database of 13,000+ words and persists user generated data (link to API repo here - https://github.com/deebnntt/magNET-API)
 + Built frontend with React, using Redux for state management and user authentication
