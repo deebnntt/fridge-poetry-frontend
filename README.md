@@ -12,5 +12,3 @@ Demo Video: https://vimeo.com/247390566
 ![](https://media.giphy.com/media/3ohs7KmPlqQ0npAxRm/giphy.gif)
 
 ![](https://media.giphy.com/media/xT0xeis2rx2PxRQodG/giphy.gif)
-
-![](https://media.giphy.com/media/xUOxfc4SpQazV4sNGg/giphy.gif)
