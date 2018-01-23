@@ -6,10 +6,6 @@ import dragIcon from '../../drag-icon.png'
 
 class ShareCard extends React.Component {
 
-  componentDidMount() {
-
-	}
-
   displayPoem = () => this.props.text.split('\n').map(function(item, index) {
     return  (
       <span key={index}>

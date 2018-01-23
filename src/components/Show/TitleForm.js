@@ -9,10 +9,6 @@ class TitleForm extends React.Component {
       }
   }
 
-  componentDidMount() {
-
-	}
-
   handleInputChange = (event) => {
 		this.setState({
 			input: event.target.value

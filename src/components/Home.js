@@ -5,9 +5,7 @@ import { Redirect } from 'react-router'
 
 class Home extends React.Component {
 
-
   render() {
-    console.log(this.props.currentUser.id);
     return(
       <div>
       {this.props.currentUser.id ? <Redirect to="/playground"/> : null}
